@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solatirus Website - Update 4</title>
+	<link rel="stylesheet" type="text/css" href="../../css/post_page.css">
+	<link rel="icon" type="image/png" href="../../images/icon.png">
+	<meta name="description" content="Project Phases Update 4">
+	<meta name="keywords" content="Project Phases, Updates, Soltairus, Website, GameMaker, Update 4, Multiple Player Combat">
+	<meta name="author" content="Soltairus">
+</head>
+<body>
+
+<header id="main_header">
+	<div class="container">
+		<a href="../../index.html"><h1>Soltairus</h1></a>
+	</div>
+</header>
+
+<nav id="navbar">
+	<div class="container">
+		<ul>
+      <li><a href="../phases.html">Project Phases</a></li>
+			<li><a href="../updates.html">Phases Updates</a></li>
+			<li><a href="../devlog.html">Dev-Logs</a></li>
+			<li><a href="../reviews.html">Reviews</a></li>
+			<li><a href="../other.html">Other Posts</a></li>
+			<li><a href="../archive.html">Archive</a></li>
+			<li><a href="../about.html">About</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+<div id="post_header"><h1>Update 4: Multiple Player Combat</h1>
+  <p>
+    August 14, 2017.
+  </p>
+</div>
+<hr>
+<div id="post_text">
+  <!-- INTRO -->
+<div class="video_container">
+    <iframe width="789" height="444" align="middle" src="https://www.youtube.com/embed/6jbgVr--s9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<hr>
+<p>
+Welcome back everyone to Update 4 of Project Phases. These next two updates are 2 parts of the same update of Multiple Player Combat. Before this update, you could only fight with one character in your party at a time but now you can fight with three at once.<a href="update5.html">The next update</a>  will go over the enemy side of combat where you can fight three enemies at once. With that explanation out of the way, lets go over what’s new!
+<br>
+<br>
+<h2>Main Menu Changes</h2>
+In the "Setup" menu on the main menu, there is a new button called “Player Select”. Here you can select which character you use within the game. You have 3 characters, Daryl, Clint and Oliver. Daryl is a balanced character (and the character that was already in the game), Clint is the healer and Oliver is a tank like character. Each character works independently from each other; meaning if you only want to fight with Daryl you can.
+<br>
+<br>
+<img src="../../images/Updates/Update 4/update4_playerselect.png" alt="New player selection menu."  style="width:70%; height:70%; display: block;">
+<br>
+<h2>Overworld Changes</h2>
+Jumping into the game, you will instantly see the characters on the left-hand side of the screen. This is a temporary menu for the player stats until I get something a bit more official. The characters shown here will change depending if you have selected them in the menu discussed earlier.
+<br>
+<br>
+<img src="../../images/Updates/Update 4/update4_overworld.png" alt="Health and Point stats on the left side of the screen with all characters."  style="width:50%; height:50%; display: block;">
+<br>
+
+<h2>Battle Changes</h2>
+By far the biggest change with this update is the battles. When you engage in a battle, you will see all of your characters on the right side.
+<br>
+<br>
+<img src="../../images/Updates/Update 4/update4_battle.png" alt="Battle screen with all characters on the left side"  style="width:50%; height:50%; display: block;">
+<br>
+There are a lot of changes, so I am going to list them out here...
+<br>
+<br>
+•	Everyone has a new skip button next to their character, clicking that will allow you to skip any phase you are in including the wait and defend phase. <br>
+•	The attack menu now disappears whenever it is not in use.<br>
+•	The attack menu is now outline with a color (either blue, green or red). This corresponds to one of the character’s shirt and helps you figure out who you are controlling.<br>
+•	Depending on who is fighting, the positions of the players will always be centered<br>
+•	The enemy attacks everyone at once now. This is temporary until I get all of the other enemies in but is something to note.<br>
+•	Everyone now has a maximum health and cannot go over it.<br>
+<br>
+Since there are two new characters, I had to make new attacks for them. I made three attacks for each making six new attacks in total (nine attacks if we include Daryl). Here is a quick rundown of every character’s attacks and stats…
+<br>
+<br>
+<h3>Characters-</h3>
+•	Daryl – 25 Max Health, 8 Points, 10 Time<br>
+•	Clint – 30 Max Health, 12 Points, 6 Time<br>
+•	Oliver – 50 Max Health, 10 Points, 16 Time<br>
+<br>
+<h3>Attacks-</h3>
+•	Slash (Daryl) – Does 10 damage, uses 3 Points and 5 Time. Does 2 damage in the defend phase.<br>
+•	Fury(Daryl) – Does 15 damage, uses 5 Points and 7 Time.<br>
+•	Heal (Daryl)- Heal 5 HP to whoever used it, uses 4 Points and 3 Time<br>
+•	Wide Slash (Oliver) – Does 10 damage, uses 7 Points and 8 Time. Does damage to all enemies.<br>
+•	Smash Down (Oliver) – Does 20 damage, uses 10 Points and 12 Time.<br>
+•	Defense Break (Oliver) - Does 10 damage, uses 10 Points and 4 Time. Only work if hits in the Defend phase. If successfully hit in defend phase, it will make enemy’s defend phase act like a wait phase. (Demonstration below)<br>
+•	Choice Heal – Heal 10 HP to whoever is selected, uses 5 Points and 2 Time.<br>
+•	Party Heal – Heal 7 HP to the entire party, uses 8 Points and 5 Time.<br>
+•	Living strike – Does a certain amount of damage depending on the health of the user. The lower the user’s health, the more powerful the attack. Uses 4 Points and 4 time.<br>
+<br>
+<br>
+Here is a .gif of Defense Break in action...
+<br>
+<img src="../../images/Updates/Update 4/update4_defense.gif" alt="Player using Defense Break, Followed by Slash."  style="width:50%; height:50%; display: block;">
+<br>
+By far the hardest move to program was Choice Heal. This is because for it to work, you must select a player. Up to this point, you didn’t have to select anything, so this was a whole new system for me. It took quite a bit of time to get it working, but I am happy on how it turned out. I will also need it for the next update when you must select which enemy to attack for almost every move.
+<br>
+<br>
+This has been the most difficult update yet. There is so many small things that had to be programmed in to get anything to work. There are a lot of bugs and glitches that still need to be figured out, and honestly, it’s a bit intimidating knowing I have to fix those. However, I am happy with the results and I am ready to keep it going with the next update.
+<br>
+<br>
+Thanks for reading,
+<br>
+<br>
+Andy
+
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+<footer id="main_footer">
+	<p>Soltairus Website</p>
+	<div id="main_footer_links">
+			<a target="_blank" href="https://twitter.com/soltairus">Twitter</a>
+			<a target="_blank" href="https://www.youtube.com/channel/UCDMWA2XwUlxsRsmgY9oa7dg">Youtube</a>
+			<a target="_blank" href="https://www.twitch.tv/soltairus">Twitch</a>
+	</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solatirus Website - Update 5</title>
+	<link rel="stylesheet" type="text/css" href="../../css/post_page.css">
+	<link rel="icon" type="image/png" href="../../images/icon.png">
+	<meta name="description" content="Project Phases Update 5">
+	<meta name="keywords" content="Project Phases, Updates, Soltairus, Website, GameMaker, Update 5, Multiple Enemy Combat">
+	<meta name="author" content="Soltairus">
+</head>
+<body>
+
+<header id="main_header">
+	<div class="container">
+		<a href="../../index.html"><h1>Soltairus</h1></a>
+	</div>
+</header>
+
+<nav id="navbar">
+	<div class="container">
+		<ul>
+      <li><a href="../phases.html">Project Phases</a></li>
+			<li><a href="../updates.html">Phases Updates</a></li>
+			<li><a href="../devlog.html">Dev-Logs</a></li>
+			<li><a href="../reviews.html">Reviews</a></li>
+			<li><a href="../other.html">Other Posts</a></li>
+			<li><a href="../archive.html">Archive</a></li>
+			<li><a href="../about.html">About</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+<div id="post_header"><h1>Update 5: Multiple Enemy Combat</h1>
+  <p>
+    November 7, 2017.
+  </p>
+</div>
+<hr>
+<div id="post_text">
+  <!-- INTRO -->
+<div class="video_container">
+    <iframe width="789" height="444" src="https://www.youtube.com/embed/THixlhJrmIU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<hr>
+<p>
+  Welcome back to Project Phases. This is Update 5 which is part 2 of multiple player combat which covers the enemy side of things. Not much of an introduction, but we got a lot to cover so let’s start!
+  <br>
+  <br>
+  <h2>Main Menu Changes</h2>
+  If you make your way to the Player Select menu, you will see 3 new people on the bottom. These are the enemies which you can select and unselect just like the players. The enemies are Clockman, Crocman and Lockman. I got the ideas for the characters from a drawing my friend made, so I technically didn’t make them. Converting the drawing into 16x16 sprites was fun and I think they all turned out great. My favorite is Lockman just because how well his suit complements the rest of his design. If you want a closer look at the enemies, go to the Project Phases tab on the website and scroll to the “Enemy” section.
+  <br>
+  <br>
+	<img src="../../images/Updates/Update 5/update5_playerselect.png" alt="Player Select menu with enemies on the bottom"  style="width:70%; height:70%; display: block;">
+	<br>
+  <h2>Battle Changes</h2>
+  This is where the bulk of the update is. Now when you go into a battle, you will see all three enemies on the right. I think it looks great with all six characters on each side. It makes everything look more complete.
+  <br>
+  <br>
+	<img src="../../images/Updates/Update 5/update5_battle.png" alt="Battle screen with Players on the left and Enemies on the right"  style="width:50%; height:50%; display: block;">
+	<br>
+  The first big change is the new selection system. I revamped the system from the last update that I used for the Choice Heal attack and applied it to all the moves. Now, once you select an attack you can select a target. The future arrow will move accordingly to where it will attack. The future arrow is still really buggy and doesn’t work all the time, so I hope to get that fixed soon. Also, Oliver’s Wide Slash attack now works since we have all the enemies. You don’t have to select anyone to use Wide Slash.
+  <br>
+  <br>
+  Here are all the new attack animations for the enemies…
+	<br>
+	<hr>
+  <img src="../../images/Updates/Update 5/update5_clockman.gif" alt=""style="height:25%;width:25%;">
+	<img src="../../images/Updates/Update 5/update5_crocman.gif" alt="" style="height:25%;width:25%;">
+	<img src="../../images/Updates/Update 5/update5_lockman.gif" alt="" style="height:25%;width:25%;">
+	<hr>
+  <br>
+  The Enemy AI as received a huge overall. Before, it was based on one player’s state in the timeline but now it is based on a priority system. Every enemy goes through a list of priorities, whenever one is true it uses it. Here is that list… <br>
+  <br>
+  -Lowest Health <br>
+  -Max Health<br>
+  -Defend Phase<br>
+  -Random<br>
+  -Max Point<br>
+  <br>
+  Some enemies have it ordered differently so not every enemy is attack the same person. For example, one enemy might check who has the lowest health. If that person is in the defend phase, they will try checking who has the most points, then attack. If that person is also in the defend phase, they might just go ahead and attack or randomly pick someone. He may also heal or wait depending on what his health is. If everyone is in the defend phase, given the enemy has enough points, it may just skip.
+  There are many options, but there is still a lot of work to be done. In the future, I hope to add some way where you can figure out what each enemy’s priorities are so you can build strategies around it.
+  <br>
+  <br>
+  If you want to see a full battle, at 11:36 in the update video I demonstrate a battle and all of the thought that can go behind it. The video should be embedded above, so go check it out. I also talk about some future mechanics in that video. But it doesn’t last long since the game crashed, but you get the point.
+  <br>
+  <br>
+  Overall, Update 4 and 5 combined has been the biggest update yet. It’s really helped the game come together. Next update will be additions to the overworld since we have been working in the battle system for a long time.
+  <br>
+  <br>
+  Until next time.
+  <br>
+  <br>
+  Thanks for reading,
+  <br>
+  <br>
+  Andy
+
+
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+<footer id="main_footer">
+	<p>Soltairus Website</p>
+	<div id="main_footer_links">
+			<a target="_blank" href="https://twitter.com/soltairus">Twitter</a>
+			<a target="_blank" href="https://www.youtube.com/channel/UCDMWA2XwUlxsRsmgY9oa7dg">Youtube</a>
+			<a target="_blank" href="https://www.twitch.tv/soltairus">Twitch</a>
+	</div>
+</footer>
+
+</body>
+</html>

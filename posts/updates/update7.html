@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solatirus Website - Update 7</title>
+	<link rel="stylesheet" type="text/css" href="../../css/post_page.css">
+	<link rel="icon" type="image/png" href="../../images/icon.png">
+	<meta name="description" content="Project Phases Update 7">
+	<meta name="keywords" content="Project Phases, Updates, Soltairus, Website, GameMaker, Update 7, Inventory and Stats, Inventory, Stats">
+	<meta name="author" content="Soltairus">
+</head>
+<body>
+
+<header id="main_header">
+	<div class="container">
+		<a href="../../index.html"><h1>Soltairus</h1></a>
+	</div>
+</header>
+
+<nav id="navbar">
+	<div class="container">
+		<ul>
+      <li><a href="../phases.html">Project Phases</a></li>
+			<li><a href="../updates.html">Phases Updates</a></li>
+			<li><a href="../devlog.html">Dev-Logs</a></li>
+			<li><a href="../reviews.html">Reviews</a></li>
+			<li><a href="../other.html">Other Posts</a></li>
+			<li><a href="../archive.html">Archive</a></li>
+			<li><a href="../about.html">About</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+<div id="post_header"><h1>Update 7: Inventory and Stats</h1>
+  <p>
+    October 4, 2018
+  </p>
+</div>
+<hr>
+<div id="post_text">
+  <!-- INTRO -->
+<div class="video_container">
+    <iframe width="789" height="444" src="https://www.youtube.com/embed/DtdLYrgXHXU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<hr>
+<p>
+Hello everybody, welcome back to the latest update to Project Phases. This is Update 7 which covers the new inventory/item system and all the new stats connected to the characters. A lot to cover so here we go.
+<br>
+<br>
+<h2>Overworld Changes</h2>
+
+At first glance, nothing has changed in the overworld. However, if you press “I” to open your menu you will see some new options. The menu now consists of four tabs, Party, Items, Quest and Map. Quest and Map do nothing yet (and honestly, I might get rid of the Map tab but I’m not sure yet). Party has slightly changed, showing maximum points and HP. This is to reflect some other changes having to do with items.
+<br>
+<br>
+<img src="../../images/Updates/Update 7/update7_menu.png" alt="New inventory menu filled up and with weapons tab open"  style="width:50%; height:50%; display: block;">
+<br>
+Speaking of items, going into the “Items” tab presents you with more options. There are four types of items, Weapons, Armor, Consumables and Key Items. If you click any of the tabs, you will open the menu that corresponds to that item type. Weapons and armor are equippable items that permanently increase your stats while you have them equipped. Consumables are one time use items used to heal some HP or increase your point count. Key items are important items needed for a quest or to open something. Here is a list of all the items in the game broken down by category.
+<br>
+<br>
+<h3>Weapons-</h3>
+Daryl’s Sword, Melee, +3 Attack<br>
+Clint’s Staff of Healing, Ranged, +2 Attack<br>
+Oliver’s Rock Sword, Melee, +4 Attack<br>
+River Sword, Ranged, +4 Attack<br>
+<br>
+<h3>Armor</h3>
+Light Armor, +4 Defense<br>
+Heavy Armor, +6 Defense<br>
+<br>
+<h3>Consumables</h3>
+Small Healing Packet, +10 HP, 2 Time<br>
+Small Point Packet, +5 Points, 2 Time<br>
+Large Healing Packet, +25 HP, 5 Time<br>
+Large Point Packet, +10 Points, 5 Time<br>
+<br>
+<h3>Key Items</h3>
+Alex’s House Key – A key to Alex’s house.
+<br>
+<br>
+For weapons and armor, equipping is as simple as selecting what you want and then selecting a character. You have to have the right amount though, you can't equip 2 River Swords if you only have 1 in your inventory. Equipping different weapons and armor can increase different stats depending on what you are equipping.
+<br>
+<br>
+There are 4 stats, Health, Attack, Speed and Points. Health (HP) is how much damage you can take. You can increase your maximum health by equipping better armor. Attack is how much damage you do. You can increase your damage by equipping better weapons. I'll explain what speed does in the Battle changes section, since it pertains more to there. Speed is a stat that isn’t directly influence by anything yet but will be eventually. Maximum points also can’t be changed directly. Having the best stuff equipped for battle is the key to victory. I’m hoping to have multiple stats connect to different pecies of equipment later down the line. For example, Light Armor doesn’t change your speed, but Heavy Armor takes a bit away.
+<br>
+<br>
+You can use consumables to heal a player’s health or points. It’s the same process as equipping, but you lose the item once you use it. You can also use items in battles, but I will explain that process later. Also, consumables have “Next” and “Back” buttons. This is because the number of items go over the number that can be shown on one screen. You can press next to see the rest of the items. There are some test items for the sole purpose of testing the scroll bars. Key items don’t do anything yet.
+<br>
+<br>
+<h2>Battle Changes</h2>
+
+The battle UI has seen a new addition. The previously unused box on the bottom now serves as a menu to change between actions. You can choose “Attack”, “Items”, or “Other”. “Attack” shows all your available moves to use against the opponent. “Items” shows all of your items that you can use, and “Other” surprisingly has nothing.
+<br>
+<br>
+Using items in battles is neat. Items work just like attacks do. Items don’t use points however, just time. You can even use them to replenish points and use those points to attack all in the same turn! For example, Daryl has 5 points and he want to attack Clockman with a Slash. That Slash will take 3 points to use, but you also want Daryl to use Heal but you don’t have enough points to do it. Before you would just have to wait to get more points, but there is another option involving items. You can use slash and bring your point count to 2 (Heal takes 4 points to use). You can use a Small Point Packet to replenish 5 points, then you will have enough points to use Heal all in the same turn. This combo works great and is demonstrated in the video above at 11:45 if you still don’t fully understand it. The only limitation is how much time you have, so this works better with people with longer attack phases
+<br>
+<br>
+<img src="../../images/Updates/Update 7/update7_battle.png" alt="Battle screen with new options on the bottom"  style="width:50%; height:50%; display: block;">
+<br>
+The battles themselves have also seen a big change being the stat from earlier, speed. Every character has a speed and it determines how fast they move across the timeline. If they have a faster speed, they will do everything quicker than someone with a slower speed. It is a subtle change but can mean all the difference in an intense battle. It also gives more advantages to faster characters and disadvantage to slower characters. Oliver is a good example of this, he can do lots of damage in one turn and it made him slightly over-powered; but speed helps balance him out with everyone else. All the enemies also have speed, which is randomized and the beginning of every battle. Speed is also the hardest thing to program yet in the game! Up to this point, everyone ran at the same speed. When I changed that however, everything got messed up. None of the attacks work, nothing lined up, it was a disaster. Once I got everything sorted out, the future arrow wasn’t working right (especially with Wide Slash) and it took forever to think of a solution. The solution isn’t perfect, however. Due to the way the timeline works, the future arrow may be, visually, a bit off; but functionally, it is accurate. I will continue to work on the future arrow and see if I can make it any better.
+<br>
+<br>
+Speed in general made me revamp the whole battle system. Instead of your attacks being based on an internal timer, it is now based on the position of the future arrows. Before, the future arrows were only visual but now they are integral to the game's programming. Because I had to practically remake the whole battle system, this update took a very long time. However, I am very happy with the results. The battles are now much less buggy and work more consistently. Sometimes, you still don’t attack for some reason, but the number of cases has gone down massively. The last update was crazy buggy, and I was worried I wasn’t going to be able to fix it; but I am happy to say that the game is working better than ever!
+<br>
+<br>
+If you noticed earlier when I was explaining the items, the weapons had weapon types; either melee or ranged. Some enemies are weak to one or the other. For example, Crocman is weak to melee weapons like Daryl has. This causes Daryl to do a bit more damage to Crocman than to the other enemies. You can also see the amount of damage an attack will do be updated live depending on who you hover over.
+<br>
+<br>
+Another minor bug fix is skipping when stopped feature. Before it would glitch out if two people were in the attack phase at the same time, but now it all works as you would expect. Also, before if an enemy skipped after you have planned out an attack but before you could execute it, the attack would be completely ignored. Now however, the attack will be moved up to later in the enemy timeline and, given the difference, will attack at the same time.
+<br>
+<br>
+That concludes this update. There is a lot of stuff here and all of it is working great. The game is really starting to come together! Next up will be a lot of polishing and expanding of the features and mechanics of the game. I’ll see you then.
+<br>
+<br>
+Thanks for reading,
+<br>
+<br>
+Andy
+
+</p>
+</div>
+
+</div>
+<footer id="main_footer">
+	<p>Soltairus Website</p>
+	<div id="main_footer_links">
+			<a target="_blank" href="https://twitter.com/soltairus">Twitter</a>
+			<a target="_blank" href="https://www.youtube.com/channel/UCDMWA2XwUlxsRsmgY9oa7dg">Youtube</a>
+			<a target="_blank" href="https://www.twitch.tv/soltairus">Twitch</a>
+	</div>
+</footer>
+
+</body>
+</html>
