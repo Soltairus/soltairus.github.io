@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solatirus Website - Dev-Log #4: Speed Technical Explanation and Why it can cause many problems></title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133298626-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-133298626-1');
+	</script>
+	<link rel="stylesheet" type="text/css" href="../../css/post_page.css">
+	<link rel="icon" type="image/png" href="../../images/icon.png">
+	<meta name="description" content="Dev-Log #1: Why Make a Website?">
+	<meta name="keywords" content="Project Phases, Updates, Soltairus, Website, GameMaker, Dev-Log, Developer Log, Development">
+	<meta name="author" content="Soltairus">
+</head>
+<body>
+
+<header id="main_header">
+	<div class="container">
+		<a href="../../index.html"><h1>Soltairus</h1></a>
+	</div>
+</header>
+
+<nav id="navbar">
+	<div class="container">
+		<ul>
+      <li><a href="../phases.html">Project Phases</a></li>
+			<li><a href="../updates.html">Phases Updates</a></li>
+			<li><a href="../devlog.html">Dev-Logs</a></li>
+			<li><a href="../reviews.html">Reviews</a></li>
+			<li><a href="../other.html">Other Posts</a></li>
+			<li><a href="../archive.html">Archive</a></li>
+			<li><a href="../about.html">About</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+<div id="post_header"><h1>Dev-Log #4: Speed Technical Explanation and Why It Can Cause So Many Problems</h1>
+  <p>
+    February 27, 2019.
+  </p>
+</div>
+<hr>
+<div id="post_text">
+  <!-- INTRO -->
+  <p>
+Update 7 added one of my favorite new features to the game, speed. It does exactly what it sounds like, it determines how fast you move along the timeline. However, ever since its addition into the game speed has become a big hurdle to overcome anytime I want to make any changes to it. This dev-log (which is a semi continuation from <a href="devlog3.html">Dev-Log #3</a>) explains why this is and how it works exactly.
+<br>
+<br>
+I have had the idea of speed since the beginning of the game’s development. I thought it would be a neat mechanic to add. I wanted to add it to the first version of the game but couldn’t figure out how to make it work the way I wanted to. At the time, I was too inexperienced and just getting started so I decided to worry about the basics first and see if I could add it later. It wasn’t until Update 7 where I started to add more stats that I thought it was about time for me to try again to add speed into the game.
+<br>
+<br>
+This part gets technical, but I will try to simplify it as much as possible. Let me explain how speed works and how it got to be now.
+<br>
+<br>
+Initially, I thought that the only things I would need to change were the rate that the arrow moves across the timeline and the internal timer that kept the timeline in place. The arrow moved one pixel every frame and the timeline subtracted .1 (out of 30) every frame. So it looked a bit a like this…
+<br>
+<br>
+<div class="code_text">
+  arrow.x = arrow.x +1
+  <br>
+  timeline = timeline -.1;
+</div>
+<br>
+<br>
+What I thought I would have to do was to simply add the speed to these values. The speed value that you see in the stat would be multiplied by .001 to get the speed value for the back-end of the game. For example…
+<br>
+<br>
+<div class="code_text">
+  //Speed of 10
+  <br>
+  display_speed = 10 //Speed displayed in the game. Overworld stat
+  <br>
+  player_speed = display_speed * .001 //What the game sees it as
+</div>
+<br>
+<br>
+In this example, the back-end speed would end up being .01. So, I thought all I would have to do is add speed like this…
+<br>
+<br>
+<div class="code_text">
+  arrow.x = arrow.x + (1+player_speed)
+  <br>
+  timeline = timeline –(.1+player_speed);
+</div>
+<br>
+<br>
+After some testing, I changed a few things and got everything working. I thought I was done, that was until I try to use an attack. I quickly realized the future arrow was misaligned from where the attack landed. This should have been a quick and easy fix, but this is where the problems arose. Long story short, after countless hours of testing I decided to redesign the way the attacks are calculated to accommodate for speed from the ground up.
+<br>
+<br>
+The basic structure of the combat works with 3 elements, attack selection script, attack time script and attack execution script. Selection is how the attack was initially selected from the menu, data calculated here goes into the time script. The time script determines how much time must pass before an attack is used. It also manages the order to make sure attacks are not used out of turn. Finally, execution determines what happens when the attack hits. This is where any special properties of the attack are determined.
+<br>
+<br>
+What I had to do was change the selection and time script, the execution script stayed relatively unchanged. I had to find some way to determine where the attack should land and give it to the time script while incorporating speed. I chose to use the future arrow as the way to determine where the attack will hit. This way, no matter what (technically) you should always attack where you are supposed to attack. So, the plan was to make a new calculation for the future arrow and give the location on the timeline to the time script to execute the attack.
+<br>
+<br>
+I had gravely mistaken the way the future arrow would have to be calculated. When I initially did my testing, I had completely discounted the enemy. The enemy also has speed that I had to take that into consideration whenever I calculated the value. What I needed to find was the difference between the enemy and the player and meet in the middle. After days and weeks of testing and experimenting, I finally made the calculation that I worked consistently. Here it is and I’ll explain what it means.
+<br>
+<br>
+<div class="code_text">
+  arrow.x = (((attack_time*5)-(((attack_time-speed_conversion)*5-((attack_time-enemy_speed_conversion) * 5)
+</div>
+<br>
+<br>
+Speed conversion was the key to all this that I was missing. Speed conversion is how many extra pixels are added for every 1 timeline value (out of 30). Speed conversion is calculated when a player/enemy enters the battle. The multiplying by 5 is due to every 1 timeline unit being equal to 5 pixels; so all these calculations are done in pixels. The equation finds the difference between every 5 pixels (which is 1 timeline unit) between the enemy and player then subtracted it from the amount of time the attack takes (once again multiplied by 5). This gives me an output in pixels that I can then add directly to the future arrow x-axis.
+<br>
+<br>
+After this, I send the future arrow predicted x-axis to the time script to know when to execute the attack. After a few changes there, I had everything working perfectly. The only issue was visually the arrow could be inconsistent. However, functionally is seemed to work perfectly.
+<br>
+<br>
+I relaxed and rejoiced that I had fixed the problem, this was until I added the speed buff. I gave someone plus 100 speed to make it obvious to see when the speed buff was working. However, this made it evident that something was wrong. The future arrow would be placed, but the attack would execute <i>after</i> the attack phase has finished. This meant that, once again, the future arrow calculation was wrong; and since the whole system now depends on the future arrow, I needed to fix this or else I would have to redo the entire selection and time scripts again.
+<br>
+<br>
+This is where I ended the last dev-log, on a cliffhanger of sorts. Ever since then, I have been working hard on fixing the issue without having to remake everything. However, I am happy to report that I have fixed the issue. Let me explain.
+<br>
+<br>
+The problem lies within the future arrow x-axis calculation from earlier. When someone has the speed stat of 100 plus whatever their speed stat was before, their speed conversion turns out to be about .50. With this number, I was overshooting the mark meaning I had to figure out a way to subtract a bigger number from the attack time <i>without</i> affecting the lower value speeds. The answer was multiplication.
+<br>
+<br>
+<div class="code_text">
+  arrow.x = (attack_time – ((attack_time*speed_conversion)-(attack_time*enemy_speed_conversion)))*5
+</div>
+<br>
+<br>
+Up to this point, I had only considered addition and subtraction. I had tried multiplication, but I guess I did it wrong because I don’t remember it working well. What this new calculation does is it takes the attack time multiplied by the speed conversion for both the enemy and player and then subtracts them. After that, it subtracts that number from the attack time and converts it to pixels to add to the x-axis. The only issue now is if the enemy’s speed is greater than the players, you get a negative number. We must adjust for this, otherwise, the arrow would move in the wrong direction on the x-axis. This is the solution…
+<br>
+<br>
+<div class="code_text">
+speed_calc = ((attack_time*speed_conversion)-(attack_time*enemy_speed_conversion))
+<br>
+speed_calc = speed_calc * sign(speed_calc) //Sign can either be 1 or -1
+<br>
+arrow.x = (attack_time – speed_calc)*5
+</div>
+<br>
+<br>
+Basically, this splits up the calculation to two different parts. The first part does the speed conversion calculation and makes sure it is always positive. This number is stored in “speed_calc” to use in the second calculation that adds it to the arrow x. Here is an example of how this works compared to the old system
+<br>
+<br>
+<div class="code_text">
+  //STATS
+  <br>
+  attack_time = 12
+  <br>
+  player_speed_conversion = .012 (for low conversion)/ .5 (for high conversion)
+  <br>
+  enemy_speed_conversion = .01
+  <br>
+  <br>
+  //OLD SYSTEM
+  <br>
+  //IF SPEED IS LOW
+  <br>
+  arrow.x = (((12*5)-(((12-.012)*5-((12-.01) * 5) //= 59.96 pixels to the right
+  <br>
+  <br>
+  //IF SPEED IT HIGH
+  <br>
+  arrow.x = (((12*5)-(((12-.5)*5-((12-.01) * 5) //= 62.45 pixels to the right
+  <br>
+  <br>
+  //NEW SYSTEM
+  <br>
+  //IF SPEED IS LOW
+  <br>
+  speed_calc = ((12*.012)-(12*.01)) //This equals .024
+  <br>
+  speed_calc = .024 * sign(.024) //Sign can either be 1 or -1 (in this case 1 because .024 is positive), In case speed_calc was negative, this makes positive.
+  <br>
+  arrow.x = (12 – .24)*5 //= 58.8 pixels to the right.
+  <br>
+  <br>
+  //IF SPEED IT HIGH
+  <br>
+  speed_calc = ((12*.5)-(12*.01)) //This equals 5.88
+  <br>
+  speed_calc = 5.88* sign(5.88) //Sign can either be 1 or -1 (in this case 1 because 5.88 is positive), In case speed_calc was negative, this makes positive.
+  <br>
+  arrow.x = (12 – 5.88)*5 //= 30 pixels to the right.
+</div>
+<br>
+<br>
+
+Let me point out the significant differences between the two. For reference, the difference in speed between the two stats is plus 100! This means logically that the higher the speed, the lower the final output number should be. However, in the first calculation the exact opposite happens. The calculation goes up! Also pay notice to how similar the first set of low speed numbers are between the two equations. It not only explains why I didn’t catch this earlier, but also the behavior of the first equation. The higher the number, the farther from the correct value it is. In the second equation, you can see the big difference between the final numbers. The high-speed output in the correct equation is greater than half than the old one! No wonder it was wrong. The “sign” function simply takes the number you input and spits out a 1 or -1. To make any number positive, you can just multiply it by the “sign” of itself; and I take advantage of that here. If you want to mess around and put in your own numbers, go right ahead the equations are there. It is not only fun to see how speed can drastically affect things, but also how wrong I was before!
+<br>
+<br>
+Now whatever the output number is will be added to the future arrow x-axis. Wherever the x-axis lands is the location that will be sent to the time script. From there, it will execute the attack when your timeline arrow reaches that point in the timeline. This (technically) should lead to a attack system that is 100% percent accurate; given that all the data and calculations are accurate.
+<br>
+<br>
+That is the how future arrow system worked, why it is so complicated and why it can break the game! To avoid too much confusion, I left out a few other elements that contribute to this system working like what happens if the future arrow goes over the timeline and loops to the other side. Hopefully you learned something new and found the technical aspects of Phases interesting. Writing this dev-log was a lot of fun and helped me really fact check what I was doing. I hope to do more of these technical dev-logs in the future, so stay tuned.
+<br>
+<br>
+Thanks for reading,
+<br>
+<br>
+Andy
+
+	</p>
+</div>
+
+
+
+</div>
+<footer id="main_footer">
+	<p>Soltairus Website</p>
+	<div id="main_footer_links">
+			<a target="_blank" href="https://twitter.com/soltairus">Twitter</a>
+			<a target="_blank" href="https://www.youtube.com/channel/UCDMWA2XwUlxsRsmgY9oa7dg">Youtube</a>
+			<a target="_blank" href="https://www.twitch.tv/soltairus">Twitch</a>
+	</div>
+</footer>
+
+</body>
+</html>
