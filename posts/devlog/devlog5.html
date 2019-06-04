@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solatirus Website - Dev-Log #5: New Party Menu and Battle Polish></title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133298626-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-133298626-1');
+	</script>
+	<link rel="stylesheet" type="text/css" href="../../css/post_page.css">
+	<link rel="icon" type="image/png" href="../../images/icon.png">
+	<meta name="description" content="Dev-Log #1: Why Make a Website?">
+	<meta name="keywords" content="Project Phases, Updates, Soltairus, Website, GameMaker, Dev-Log, Developer Log, Development, 5">
+	<meta name="author" content="Soltairus">
+</head>
+<body>
+
+<header id="main_header">
+	<div class="container">
+		<a href="../../index.html"><h1>Soltairus</h1></a>
+	</div>
+</header>
+
+<nav id="navbar">
+	<div class="container">
+		<ul>
+      <li><a href="../phases.html">Project Phases</a></li>
+			<li><a href="../updates.html">Phases Updates</a></li>
+			<li><a href="../devlog.html">Dev-Logs</a></li>
+			<li><a href="../reviews.html">Reviews</a></li>
+			<li><a href="../other.html">Other Posts</a></li>
+			<li><a href="../archive.html">Archive</a></li>
+			<li><a href="../about.html">About</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+<div id="post_header"><h1>Dev-Log #5: New Party Menu and Battle Polish</h1>
+  <p>
+    June 4, 2019.
+  </p>
+</div>
+<hr>
+<div id="post_text">
+  <!-- INTRO -->
+  <p>
+
+		Hello again everyone, it’s been awhile. I apologize for the long wait, but I am back with some updates to the game. We have some new menus in the overworld and some bug fixes in the battle system.
+		<br>
+		<br>
+		First, the most noticeable change is in the overworld menu. When you open the menu, you can now click on the characters to get a more detailed look into their specific stats. You can see your stats, your equipment and attacks. Everything also has a description that shows up when you hover over any element of the menu. Furthermore, if you want to change your equipment you can click on weapon or armor to go to their respective menus. Any changes made there will be reflected in the party menu.
+		<br>
+		<br>
+		<img src="../../images/Dev-Logs/dev5/dev5_party_daryl.png" alt="Daryl's Party Menu"  style="width:30%; height:30%; display: inline;">
+		<img src="../../images/Dev-Logs/dev5/dev5_party_clint.png" alt="Clint's Party Menu"  style="width:30%; height:30%; display: inline;">
+		<img src="../../images/Dev-Logs/dev5/dev5_party_oliver.png" alt="Oliver's Party Menu"  style="width:30%; height:30%; display: inline;">
+		<img src="../../images/Dev-Logs/dev5/dev5_party_menus.gif" alt="Full gif showing functionally"  style="width:75%; height:50%; display: block;">
+		<br>
+		<br>
+		It took me a long time to decide how I wanted the menu to look. I wanted to do this at the beginning of the update, but I decided to work on the item buffs instead. This worked out well because I would have had to change the design of the party menu if I did it first. This also made me realize that the attack system is not as robust as I initially thought. Getting the dynamic attack information into the menu is impossible to do in its current state, so I expect to have to update the attack system to be on par with everything else.
+		<br>
+		<br>
+		Next, we have some battle changes. First big change has to do with buffs that I added in back in this <a href="../../posts/devlog/devlog3.html">dev-log</a>. Before, the buffs would last until the arrow looped around the timeline. This became a problem with Clint whose attack phase is right next to the end of his timeline. This meant that after the attack phase, the buff would go away. Here is a gif to show off the problem (even though the low framerate makes it hard to see).
+		<br>
+		<br>
+		<img src="../../images/Dev-Logs/dev5/dev5_speed_broken.gif" alt="Full gif showing functionally"  style="width:75%; height:50%; display: block;">
+		<br>
+		<br>
+		I have fixed this issue so that at the beginning of the attack phase the buff goes away. In the future, I will have to change it again to be on a timer. This is so if someone gets a buff in the middle of the timeline, it will end in the middle of the timeline instead at the attack phase; but for now, this works.
+		<br>
+		<br>
+		I also have fixed many bugs that I found with the battle system. Everything from attacking early, to not attacking at all was covered. I have fixed everything that I could find, and it is by far the most polished element of the game. I am happy how everything works together between all the stats and characters.
+		However, for the future, in order to speed along updates, I may limit the amount of polish things get. I realize now that many of the elements I am polishing will be changed at some point in the future, especially visual elements.
+		<br>
+		<br>
+		The next thing to add is a shop system. A place to buy more items and equipment to use on your adventures. Hopefully I can get that done sooner rather than later.
+		<br>
+		<br>
+		Thanks for reading,
+		<br>
+		<br>
+		Andy
+
+	</p>
+</div>
+
+
+
+</div>
+<footer id="main_footer">
+	<p>Soltairus Website</p>
+	<div id="main_footer_links">
+			<a target="_blank" href="https://twitter.com/soltairus">Twitter</a>
+			<a target="_blank" href="https://www.youtube.com/channel/UCDMWA2XwUlxsRsmgY9oa7dg">Youtube</a>
+			<a target="_blank" href="https://www.twitch.tv/soltairus">Twitch</a>
+	</div>
+</footer>
+
+</body>
+</html>
