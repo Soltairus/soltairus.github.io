@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solatirus Website - Dev-Log #6: Shop System, New Items and Descriptions></title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133298626-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-133298626-1');
+	</script>
+	<link rel="stylesheet" type="text/css" href="../../css/post_page.css">
+	<link rel="icon" type="image/png" href="../../images/icon.png">
+	<meta name="description" content="Dev-Log #1: Why Make a Website?">
+	<meta name="keywords" content="Project Phases, Updates, Soltairus, Website, GameMaker, Dev-Log, Developer Log, Development, 5">
+	<meta name="author" content="Soltairus">
+</head>
+<body>
+
+<header id="main_header">
+	<div class="container">
+		<a href="../../index.html"><h1>Soltairus</h1></a>
+	</div>
+</header>
+
+<nav id="navbar">
+	<div class="container">
+		<ul>
+      <li><a href="../phases.html">Project Phases</a></li>
+			<li><a href="../updates.html">Phases Updates</a></li>
+			<li><a href="../devlog.html">Dev-Logs</a></li>
+			<li><a href="../reviews.html">Reviews</a></li>
+			<li><a href="../other.html">Other Posts</a></li>
+			<li><a href="../archive.html">Archive</a></li>
+			<li><a href="../about.html">About</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+<div id="post_header"><h1>Dev-Log #6: Shop System, New Items and Descriptions</h1>
+  <p>
+    June 22, 2019.
+  </p>
+</div>
+<hr>
+<div id="post_text">
+  <!-- INTRO -->
+<p>
+Hello everyone, welcome back to another dev-log. We will talk about the new shop system, and other features that go along with it. We will also go over some new items to buy at the shop. I also want to cover the descriptions feature that I have been wanting to add for ages. So, let’s get into it.
+<br>
+<br>
+First, the brand-new shop system. If you go to the top left corner of the screen, you will find a new NPC. His name is Chris and he is the shop keeper. Once you talk to him, he will grant you access to the shop. He has randomized text to keep interactions varied, however there are only a few text options so it’s not too varied right now, but you get the point. Once you open the shop menu, you will be greeted to a familiar sight. I re-used the same structure and assets from the inventory system to save time by avoiding making new assets. You can also see your current amount of money in your wallet near the top, the default is 500.
+<br>
+<br>
+<img src="../../images/Dev-Logs/dev6/dev6_shop.gif" alt="Chris's Shop"  style="width:75%; height:50%; display: block;">
+<br>
+<br>
+You can choose from Weapons, Armor and Consumables. Once you click one you will get access to the catalog. All of the item’s stats are listed and there is a also a description on the bottom right corner (but we will get to that later). When you decide what you want to buy, simply click on the item to purchase it. Buying items takes money and each item can have their prices changed individually. This means that in the future I can have multiple shops with different prices. When you are done shopping just press “E” again to exit the menu.
+<br>
+<br>
+I am happy with the way the shop turned out. Recycling the assets from the inventory helped to save lots of time. Also, thanks to the item infrastructure I have created, adding new items to the shop was extremely simple.
+<br>
+<br>
+Speaking of items, there are many new ones. 6 new weapons, 4 new armor sets and 5 new consumables. Let’s go over them…
+<br>
+<br>
+	<h3>Weapons</h3>
+  <ul>
+<li>Stone Axe, A simple Stone Axe. The designs are over 100 year old! It is quite heavy however, lowering your speed by 1.</li>
++5 Attack, -1 Speed, Melee.
+<br>
+<li>Feather’s Bow, A bow as light as a feather, increases your speed by 2.</li>
++4 Attack, +2 Speed, Ranged
+<br>
+<li>Guardian’s Shield, A powerful, durable shield. It increases your defenses by 5 and points by 1. However, due to it's bulky nature, your speed it decrease by 1.</li>
++1 Attack, +5 Defense, -1 Speed, +1 Max Points, Melee.
+<br>
+<li>Pointy Staff, An incredibly pointy staff. It's pointiness grants you 3 extra points!</li>
++3 Attack, +3 Max Points, Ranged
+<br>
+<li>Magic Sword, A magic sword that shoots beams of light. Boost all of your stats.</li>
++6 Attack, +2 Defense, +2 Speed, +2 Max Points, Ranged
+<br>
+<li>Legendary Sword, A legendary sword that has the sharpest blade of the land. Boost all of your stats.</li>
++10 Attack, +4 Defense, +4 Speed, +4 Max Points, Melee
+</ul>
+
+<br>
+<h3>Armor</h3>
+<ul>
+<li>Thorn Armor, You don't want to touch this set of armor, it's thorny exterior makes for a bad time. However, it does increase your attack against enemies.</li>
++1 Attack, +4 Defense
+<br>
+<li>Pointy Armor, There is no point to this armor, it's just pointy and give you many points. But remember, there are no points. This armor grant you 2 points when you wear it.</li>
++5 Defense, +2 Max Points
+<br>
+<li>Magic Armor, A magical set of armor. Boost all of your stats.</li>
++2 Attack, +7 Defense, +2 Speed, +2 Max Points.
+<br>
+<li>Legendary Armor, A legendary set of armor. Boost all of your stats greatly.</li>
++4 Attack, +10 Defense, +4 Speed, +4 Max Points.
+</ul>
+
+<br>
+<h3>Consumables</h3>
+<ul>
+<li>Liquid Fire, Drink this and your soul will fill with flames, boosting you attack and speed!</li>
++1 Attack, +2 Speed, 3 Time
+<br>
+<li>Cool Drink, Take a break and cool off. Slows you down, but replenishes points and health.</li>
+-4 Speed, +30 Health, +5 Points, 3 Time.
+<br>
+<li>Sugar Packet, Eat one of these and go crazy! Boost speed but lower health and attack.</li>
+-3 Attack, +15 Speed, -5 Health, 2 Time
+<br>
+<li>Magic Potion, A magical potion that boosts all your stats!</li>
++5 Attack, +5 Speed, +20 Health, +5 Points, 3 Time
+<br>
+<li>Legendary Potion, A mystic potion that is shrouded in legend. They say it boost all your stats dramatically.</li>
++10 Attack, +10 Speed, +35 Health, +10 Points, 5 Time.
+</ul>
+
+<br>
+<br>
+In total, that is 15 new items. Like I said earlier, all of these were easy to add into the game, so I added as many as I had ideas for. You may see a trend with some of them, specifically the magic and legendary items which boost all your stats to a certain degree. You can also read all the description above. Every item and attack have a description, and they have for the entire game development cycle so far. However, there has never been a place to display the description. Until now…
+<br>
+<br>
+<img src="../../images/Dev-Logs/dev6/dev6_inventory.gif" alt="Inventory with new items"  style="width:75%; height:50%; display: block;">
+<br>
+<br>
+In the bottom left corner (except party menu, which is on the bottom) of all menus, you can find a box. When you hover over an item, this box fills in with the description. This tells you exactly what the item does. This also works in battles with a new menu on the bottom. I had to move everything up slightly to make it fit, but it works great.
+<br>
+<br>
+<img src="../../images/Dev-Logs/dev6/dev6_battle.gif" alt="Battles with descriptions"  style="width:75%; height:50%; display: block;">
+<br>
+<br>
+It adds a whole other layer of complexity when everything you do now has a readable snippet to go along with it. I think is adds a lot to the game and I am happy I did it.
+<br>
+<br>
+The next few changes I want to make are much more polished based. Polishing up the battle system a bit more and trying to start wrapping things up for the demo. There isn’t much left to add to Update 8, so hopefully I can get that out soon enough.
+<br>
+<br>
+Thanks for reading,
+<br>
+<br>
+Andy
+</p>
+
+</div>
+
+</div>
+<footer id="main_footer">
+	<p>Soltairus Website</p>
+	<div id="main_footer_links">
+			<a target="_blank" href="https://twitter.com/soltairus">Twitter</a>
+			<a target="_blank" href="https://www.youtube.com/channel/UCDMWA2XwUlxsRsmgY9oa7dg">Youtube</a>
+			<a target="_blank" href="https://www.twitch.tv/soltairus">Twitch</a>
+	</div>
+</footer>
+
+</body>
+</html>
