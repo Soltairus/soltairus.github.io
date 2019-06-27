@@ -112,6 +112,7 @@ a{
 #post_text h3{
 	font-size: 18px;
 	margin: 0px;
+	text-decoration: underline;
 }
 
 #post_text img{
