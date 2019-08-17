@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solatirus Website - Dev-Log #9: Future Arrow Mechanics Explained></title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133298626-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-133298626-1');
+	</script>
+	<link rel="stylesheet" type="text/css" href="../../css/post_page.css">
+	<link rel="icon" type="image/png" href="../../images/icon.png">
+	<meta name="description" content="Dev-Log #1: Why Make a Website?">
+	<meta name="keywords" content="Project Phases, Updates, Soltairus, Website, GameMaker, Dev-Log, Developer Log, Development, 5">
+	<meta name="author" content="Soltairus">
+</head>
+<body>
+
+<header id="main_header">
+	<div class="container">
+		<a href="../../index.html"><h1>Soltairus</h1></a>
+	</div>
+</header>
+
+<nav id="navbar">
+	<div class="container">
+		<ul>
+      <li><a href="../phases.html">Project Phases</a></li>
+			<li><a href="../updates.html">Phases Updates</a></li>
+			<li><a href="../devlog.html">Dev-Logs</a></li>
+			<li><a href="../reviews.html">Reviews</a></li>
+			<li><a href="../other.html">Other Posts</a></li>
+			<li><a href="../archive.html">Archive</a></li>
+			<li><a href="../about.html">About</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+<div id="post_header"><h1>Dev-Log #9: Future Arrow Mechanics Explained</h1>
+  <p>
+    August 17, 2019.
+  </p>
+</div>
+<hr>
+<div id="post_text">
+  <!-- INTRO -->
+<p>
+	<br>
+	Hey everyone! Anyone who has been paying attention to my <a href="https://twitter.com/soltairus"target="_blank">Twitter</a> would have noticed I have posted a lot about the Player Future Arrow. In this dev-log, I hope to explain what that is and what it can add to the game. I also am going to explain some issues I have encountered while developing it.
+	<br>
+	<br>
+	First, let me explain what I mean by Player Future Arrow. When you select an attack, a purple arrow appears on the enemy timeline to show where that attack will land. This is vital to the mechanics of the game because it allows you to see what phase your attack will land in before you finalize it. The Player Future Arrow is showing when the attacks will happen on the player’s timeline. When I first implemented this system, I only had the enemy timeline get a future arrow. I didn’t think the player needed it. All you needed to know was that the attack happened during the attack phase. When I first made the system, I only had 1 player, 1 enemy and 3 attacks, that is it. I didn’t have multiple players/enemies, items, speed, stats, none of that. Makes you realize how far we have come! Now, with all of these new features a player future arrow makes much more sense. If you want to give an item to someone else, it helps immensely to see where it will land on their timeline. In this dev-log, I am going to explain the process of implementing the system and some problems that I encountered. I also will be going over some new additions and changes I have made as a result of this update.
+	<br>
+	<br>
+	Buckle up, this is going to be a long one.
+	<br>
+	<br>
+	<h2>Player Future Arrow</h2>
+	<br>
+	First, let me talk about actually making the player future arrow work properly. Right now, the enemy future arrow is created by code that takes the player speed, enemy speed, and the attack time and spits out a number that puts it on the timeline. I have explained in detail how this works in this <a href="file:///D:/GM/soltairus.github.io/posts/devlog/devlog4.html">dev-log</a> if you want to check that out. Initially, I thought for the player I would have to do the same thing. However, it was actually much simpler. Because the player is always the one using the attack, I only had to add the attack time. I didn’t even have to worry about speed because no matter how fast I was moving, the attack time never changes. What speed changes is how quickly you get to the attack, not the attack time itself.
+	<br>
+	<br>
+	Now that the basic system was working, I needed to work on getting more complex situations working. What happens if you select an enemy who hasn’t been selected yet on the second order? We can’t just move the enemy once for the second order, we have to account for the first order as well. In the past, the way I did this was by moving the second order arrow’s x-axis to the first order arrow’s x-axis, and then calculated the second attack. I recently discovered in a livestream however, that this doesn’t work all that well…
+	<br>
+	<!--
+	<br>
+	LINK TO LIVESTREAM CLIP OR A GIF OF THE CLIP OR SOMETHING.
+	<br>
+	-->
+	<br>
+	The solution was quite simple, just move the arrow the amount of the previous attacks. So if you select Slash for order 1 and then an Item for order 2, for the second future arrow I would move it by the time of order 1 (Slash) and then move it again of order 2 (Item). This system also made the future arrow more accurate by accounting for the speed of the enemy. The same concept applies for higher number orders as well. So, for order 5, the arrow will have order 1-4 added to it and then order 5. I made these changes for both the enemy and player and, once again, we don’t have to account for speed for the player’s arrow.
+	<br>
+	<br>
+	The last thing I had to do was figure out when I needed to run this code and make the future arrows. There are four possible scenarios…
+	<br>
+	<br>
+	<h3>1 Player and 1 Enemy: The Normal Attack</h3>
+	<br>
+	First is when you choose and normal attack and select an enemy. When you select the enemy, that enemy gets an arrow and you get an arrow. This applies to most attacks like Slash, Fury, Smash Down etc.
+	<br>
+	<br>
+	<h3>1 Player, 3 Enemies: The Carrier</h3>
+	<br>
+	Second, is when the player gets an arrow and all the enemies get an arrow. This happens when you use an attack that does something to yourself (like Daryl’s Heal) or you use an item on yourself. The enemies all get an arrow to help strategize if you are worried you might get hit before you attack. This also applies to Wide Slash, a move which attacks all enemies.
+	<br>
+	<br>
+	<h3>2 Players, 3 Enemies: The Helping Hand</h3>
+	<br>
+	This one is pretty much the same as the last one but is used for moves that the player uses an attack or item on someone else. This applies to Clint’s Choice Heal and using Items on other players besides yourself.
+	<br>
+	<br>
+	<h3>3 Players, 3 Enemies: All in</h3>
+	<br>
+	The final scenario is when everyone is selected. The only move that does this now is Party Heal. The whole party gets an arrow because they are going to be affected and enemies get an arrow to see where it will land.
+	<br>
+	<br>
+	I had to account for and make code for all these different scenarios. They are all determined on an attack by attack basis. This sadly means that (for the time being) items are locked down to being used on one person at a time. No AOE items, which would have been neat but it’s something I can live without.
+	<br>
+	<br>
+	After lots of trial and error, I have gotten all the player future arrow working. However, we aren’t done yet. I still have a few things I want to add and change, the big two being the future arrow marker and changing the way the attacks are calculated.
+	<br>
+	<br>
+	As of the writing of this dev-log, those two things are almost done so I hope to be writing a dev-log soon about them. After that, it should be time to post another update and start work on putting a demo for everyone to play!
+	<br>
+	<br>
+	It’s an exciting time for Phases, so thank you for coming along!
+	<br>
+	<br>
+	Thanks for reading,
+	<br>
+	<br>
+	Andy
+</p>
+
+</div>
+
+</div>
+<footer id="main_footer">
+	<p>&copy; Soltairus Website</p>
+	<div id="main_footer_links">
+			<a target="_blank" href="https://twitter.com/soltairus">Twitter</a>
+			<a target="_blank" href="https://www.youtube.com/channel/UCDMWA2XwUlxsRsmgY9oa7dg">Youtube</a>
+			<a target="_blank" href="https://www.twitch.tv/soltairus">Twitch</a>
+	</div>
+</footer>
+
+</body>
+</html>
