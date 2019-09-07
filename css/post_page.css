@@ -154,6 +154,16 @@ a{
 		/*margin-left: 12.5%;*/
 }
 
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+	border: 1px solid black;
+  border-collapse: collapse;
+}
 
 
 #main_footer
