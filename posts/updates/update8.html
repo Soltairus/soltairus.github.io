@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -548,3 +549,555 @@ Andy
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solatirus Website - Update 8</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133298626-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-133298626-1');
+	</script>
+	<link rel="stylesheet" type="text/css" href="../../css/post_page.css">
+	<link rel="icon" type="image/png" href="../../images/icon.png">
+	<meta name="description" content="Project Phases Update 8">
+	<meta name="keywords" content="Project Phases, Updates, Soltairus, Website, GameMaker, Update 8, Shops, Buff, Polish">
+	<meta name="author" content="Soltairus">
+</head>
+<body>
+
+<header id="main_header">
+	<div class="container">
+		<a href="../../index.html"><h1>Soltairus</h1></a>
+	</div>
+</header>
+
+<nav id="navbar">
+	<div class="container">
+		<ul>
+      <li><a href="../phases.html">Project Phases</a></li>
+			<li><a href="../updates.html">Phases Updates</a></li>
+			<li><a href="../devlog.html">Dev-Logs</a></li>
+			<li><a href="../reviews.html">Reviews</a></li>
+			<li><a href="../other.html">Other Posts</a></li>
+			<li><a href="../archive.html">Archive</a></li>
+			<li><a href="../about.html">About</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+<div id="post_header"><h1>Update 8: Shops, Buffs and Polish</h1>
+  <p>
+    September 7, 2019.
+  </p>
+</div>
+<hr>
+<div id="post_text">
+  <!-- INTRO -->
+<div class="video_container">
+    <iframe width="789" height="444" src="https://www.youtube.com/embed/pdyNj4_7P_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<hr>
+<p>
+Welcome everyone to Update 8 of Project Phases. We are getting closer and closer to the demo release that will hopefully be out by the end of this year. I have the update video up above for you to watch. It shows many of the systems talked about here in action. However, it doesn’t cover everything mentioned here (because that would take too long) so I recommend reading this post at some point as well to get all the new additions. There are of course still bugs in the game so if you see anything odd, that is most likely what it is. With that out of the way, let’s get started!
+<br>
+<br>
+<h2>Overworld Changes</h2>
+<h3>New Shop</h3>
+The first big change is the new shop system. If you go north-west from you starting position, you will find a new NPC named Chris. He is the shopkeeper and talking to him will allow you to access his shop.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_shop.png" alt="Basic Shop Menu"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+In the top left corner of the shop menu, you can see the amount of gold you have. Every item has a price, make sure you have enough gold to buy everything you want. Clicking on any of the options (weapons, armor, or consumables) will allow you to open their respective menus.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_shop_open.gif" alt="Opening the Shop Menus"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+There are a plethora of new items, so here is a list of all the names and stats of the all of the items currently in the game…
+<br>
+<br>
+
+<h3>Weapons</h3>
+<table style="">
+  <tr>
+    <th>Name</th>
+    <th>Attack Change</th>
+    <th>Defense Change</th>
+		<th>Speed Change</th>
+    <th>Point Change</th>
+    <th>Description</th>
+		<th>Weapon Type</th>
+  </tr>
+  <tr>
+    <td>Daryl's Sword</td>
+		<td>3</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>Daryl's trusty sword for taking down enemies</td>
+		<td>M</td>
+	</tr>
+	<tr>
+    <td>Staff of Healing</td>
+		<td>2</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>Clint's magic staff of healing, no one understands how it works…</td>
+		<td>R</td>
+	</tr>
+	<tr>
+    <td>Rock Sword</td>
+		<td>4</td>
+		<td>1</td>
+		<td>-1</td>
+		<td>0</td>
+		<td>A sword made of rocks, weak against paper</td>
+		<td>M</td>
+	</tr>
+	<tr>
+    <td>River Sword</td>
+		<td>4</td>
+		<td>0</td>
+		<td>1</td>
+		<td>0</td>
+		<td>A sword that is made completely from water. Shoots speedy water, increasing your speed!</td>
+		<td>R</td>
+	</tr>
+	<tr>
+    <td>Stone Axe</td>
+		<td>5</td>
+		<td>0</td>
+		<td>-1</td>
+		<td>0</td>
+		<td>A simple Stone Axe. The designs are over 100 year old! It is quite heavy however, lowering your speed.</td>
+		<td>M</td>
+	</tr>
+	<tr>
+    <td>Feather's Bow</td>
+		<td>4</td>
+		<td>0</td>
+		<td>2</td>
+		<td>0</td>
+		<td>A bow as light as a feather, increases your speed.</td>
+		<td>R</td>
+	</tr>
+	<tr>
+    <td>Guardian Shield</td>
+		<td>1</td>
+		<td>5</td>
+		<td>-1</td>
+		<td>1</td>
+		<td>A powerful, durable shield. It increases your defenses and points. However, due to it's bulky nature, your speed is decreased.</td>
+		<td>M</td>
+	</tr>
+	<tr>
+    <td>Pointy Staff</td>
+		<td>3</td>
+		<td>0</td>
+		<td>0</td>
+		<td>3</td>
+		<td>An incredibly pointy staff. It's pointiness grants you 3 extra points!</td>
+		<td>R</td>
+	</tr>
+	<tr>
+    <td>Magic Sword</td>
+		<td>6</td>
+		<td>2</td>
+		<td>2</td>
+		<td>2</td>
+		<td>A magic sword that shoots beams of light. Boost all of your stats.</td>
+		<td>R</td>
+	</tr>
+	<tr>
+    <td>Legendary Sword</td>
+		<td>10</td>
+		<td>4</td>
+		<td>4</td>
+		<td>4</td>
+		<td>A legendary sword that has the sharpest blade of the land. Boost all of your stats.</td>
+		<td>M</td>
+	</tr>
+</table>
+<br>
+
+<h3>Armor</h3>
+<table style="">
+  <tr>
+    <th>Name</th>
+    <th>Attack Change</th>
+    <th>Defense Change</th>
+		<th>Speed Change</th>
+    <th>Point Change</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Light Armor</td>
+		<td>0</td>
+		<td>4</td>
+		<td>1</td>
+		<td>0</td>
+		<td>Light armor, good for the whole family</td>
+	</tr>
+	<tr>
+    <td>Heavy Armor</td>
+		<td>0</td>
+		<td>6</td>
+		<td>-1</td>
+		<td>0</td>
+		<td>Heavy Armor, it slows you down but effective.</td>
+	</tr>
+	<tr>
+    <td>Basic Armor</td>
+		<td>0</td>
+		<td>5</td>
+		<td>0</td>
+		<td>0</td>
+		<td>Good, all around basic armor with no special properties.</td>
+	</tr>
+	<tr>
+    <td>Thorn Armor</td>
+		<td>2</td>
+		<td>4</td>
+		<td>0</td>
+		<td>0</td>
+		<td>You don't want to touch this set of armor, it's thorny exterior makes for a bad time. However, it does increase your attack against enemies.</td>
+	</tr>
+	<tr>
+    <td>Pointy Armor</td>
+		<td>0</td>
+		<td>5</td>
+		<td>0</td>
+		<td>2</td>
+		<td>There is no point to this armor, it's just pointy and give you many points. But remember, there are no points. This armor grant you 2 points when you wear it.</td>
+	</tr>
+	<tr>
+    <td>Magic Armor</td>
+		<td>2</td>
+		<td>7</td>
+		<td>2</td>
+		<td>2</td>
+		<td>A magical set of armor. Boost all of your stats.</td>
+	</tr>
+	<tr>
+    <td>Legendary Armor</td>
+		<td>4</td>
+		<td>10</td>
+		<td>4</td>
+		<td>4</td>
+		<td>A legendary set of armor. Boost all of your stats greatly.</td>
+	</tr>
+	</tr>
+</table>
+
+<h3>Consumables</h3>
+<table style="">
+  <tr>
+    <th>Name</th>
+    <th>Attack Buff</th>
+		<th>Speed Buff</th>
+		<th>Consumable Health</th>
+		<th>Consumable Points</th>
+    <th>Item Time</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Small Healing Packet</td>
+		<td>0</td>
+		<td>0</td>
+		<td>10</td>
+		<td>0</td>
+		<td>2</td>
+		<td>Health in a bag.</td>
+	</tr>
+	<tr>
+    <td>Small Point Packet</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>5</td>
+		<td>2</td>
+		<td>Points in a bag</td>
+	</tr>
+	<tr>
+    <td>Large Healing Packet</td>
+		<td>0</td>
+		<td>0</td>
+		<td>25</td>
+		<td>0</td>
+		<td>5</td>
+		<td>Even more health in a bag</td>
+	</tr>
+	<tr>
+    <td>Large Point Packet</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>10</td>
+		<td>5</td>
+		<td>Even more points in a bag.</td>
+	</tr>
+	<tr>
+    <td>Liquid Fire</td>
+		<td>5</td>
+		<td>5</td>
+		<td>0</td>
+		<td>0</td>
+		<td>3</td>
+		<td>Drink this and your soul will fill with flames, boosting you attack(+5) and speed(+5)!</td>
+	</tr>
+	<tr>
+    <td>Cool Drink</td>
+		<td>0</td>
+		<td>-4</td>
+		<td>30</td>
+		<td>5</td>
+		<td>2</td>
+		<td>Take a break and cool off. Slows you down(-5), but replenishes points(+5) and health(+30)."</td>
+	</tr>
+	<tr>
+    <td>Sugar Packet</td>
+		<td>-3</td>
+		<td>0</td>
+		<td>25</td>
+		<td>0</td>
+		<td>2</td>
+		<td>Health in a bag.</td>
+	</tr>
+	<tr>
+    <td>Magic Potion</td>
+		<td>5</td>
+		<td>5</td>
+		<td>20</td>
+		<td>5</td>
+		<td>4</td>
+		<td>A magical potion that boost all your stats! Attack(+5), Speed(+5), Health(+20), Points(+5).</td>
+	</tr>
+	<tr>
+    <td>Legendary Potion</td>
+		<td>10</td>
+		<td>10</td>
+		<td>35</td>
+		<td>20</td>
+		<td>5</td>
+		<td>A mystic potion that is shrouded in legend. It boosts all your stats dramatically, Attack(+10), Speed(+10), Health(+35), Points(+10).</td>
+	</tr>
+</table>
+<br>
+That is a lot of items! There are also some new icons in the menu that represent different stats.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_icons.png" alt="All of the new icons"  style="width:75%; height:75%; display: block;">
+<br>
+<br>
+When you hover over an item, you can see how it effects each character at the bottom of the screen. You can also see that item’s description in the bottom right corner. Every item in the game has a description now to help bring more life into the game. It also helps you figure out what each item does. Once you are ready to buy an item, simply click on it to purchase it. Then, simply stand back and watch your money (still in the top left corner) fly away…
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_shop_buy.gif" alt="Showing new descriptions and how each item affects each player, then buying something."  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+<h3>New Party Menus</h3>
+If you go into the party tab of the menu, you can see each player listed out along with some information about them. A new addition are the expanded party menus. If you click on any of the characters, you will get a more detailed look at each one.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_party.gif" alt="All of the party menus"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+Everything you ever wanted to know about the characters are in this menu. This includes their stats, attacks and what weapons/armor they have currently equipped. There is also a small box at the bottom that gets populated with descriptions whenever you hover over anything.
+<br>
+<br>
+You can also change their weapon/armor directly from the party menu. Simply click on the equipment they currently have equipped to open the menu. From there, you can equip whatever you want.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_party_shortcut.gif" alt="Shortcut to Weapons/Armor Menu from Party Menu."  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+<h3>Equip cancelling</h3>
+Speaking of equipment, there is a slight change to the equipping process. Whenever you click on some weapon or armor to equip, you can now cancel the equipping process. This can be useful if you change your mind or clicked the wrong thing. If you right-click the mouse at anytime during the equipping process, the equipping will cancel. There is also a message in the description box to remind you if you forget.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_equip_cancel.gif" alt="Showing Equip cancelling"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+I plan to add a similar mechanic to the battle system, so please stay tuned.
+<br>
+<br>
+<h3>New Area</h3>
+The final new addition to the overworld is the North Cave, the newest area in the game. It is located up north (crazy right?) next to Chris the shopkeeper. The cave currently consists of 2 floors. On the first floor is a chest, interacting with it allows you to open it to find all its treasure.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_cave.gif" alt="New North Cave and Chest"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+While the cave is nice, I am in the process of redoing many of the tiles and sprites for the game. This means that this cave will change significantly visually very soon (more on this at the end of this post), so don’t get too attached to this style.
+<br>
+<br>
+<h2>Battle Changes</h2>
+<h3>Description Box</h3>
+Right away, you can see a big change. There is a new box on the bottom of the attack menu. This is the attack menu description box. Whenever you hover over an attack or item, there will be information about here, just like the overworld version.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_battle_menu.png" alt="Updated Battle Menu"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+<h3>Arrow Markers</h3>
+The next change is a UI addition. I have added arrow markers, which mark where every attack will land. These markers appear on your timeline and the enemies. Once you confirm the attack and end the attack phase, the arrow markers will flip over to the other side of the timeline. This helps make room for the arrow up top to move smoothly across the timeline.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_arrow_marker.gif" alt="Showing arrow marker"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+The markers don’t always flip over though. If the marker would collide with an already flipped arrow, it will simply remain at the top to avoid clutter. If you wanted the markers to disappear once you end the attack phase for a cleaner look, you can change the setting in the “Setup” menu at the start of the game. The arrows will appear again during someone else’s attack phase to let you know what is going to happen.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_arrow_marker_setting.gif" alt="Showing Arrow Marker Setting"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+If you happen to forget what a marker represents, simply hover over it. When you do, information about that attack appear in the description box.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_arrow_marker_hover.gif" alt="Showing Arrow Marker Hover"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+These markers are very useful for strategizing. They also let you worry about the next attack rather than trying to remember what your previous attack was.
+<br>
+<br>
+<h3>Buffs and Debuffs</h3>
+As stated earlier, there are many new items in the game. Some of these items can do more than simply heal your health or points. Some items now have buffing and debuffing properties. Buffs are temporary stat boosts that you can use in battle. To apply the effects, just use an applicable item in battle just like any other item. Once the item is used, the effects will be applied. You will see icons appear next to your character to show what stat buffs/debuffs are currently in effect.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_sugar.gif" alt="Showing Speed Buff with Sugar Packet Item"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+In this example I use the Sugar Packet item which raises my speed by 25 but lowers my attack by 3. Once I use it, icons appear to show my current status.
+<br>
+<br>
+There is an important rule regarding how long the effects last. If you get the buff/debuff in the attack phase, when you reach the beginning of the next attack phase, the buff will go away. If you get the effects in any other phase, the boost will wear off when you reach that exact point again in the timeline. I did this to avoid having your speed change in the middle of the attack phase. It would be very difficult to check if you would still have a buff when a certain attack happens. It could still be possible to make it work so maybe I’ll change this rule later.
+<br>
+<br>
+<h3>Pre-Battle Buffs/Debuffs</h3>
+The last thing I want to mention about the buffs/debuffs is the ability to use them pre-battle. If you go into your inventory and use an item that has stat boosting properties, the effects will be applied in parenthesis next to the stat.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_fire.gif" alt="Showing Pre-Battle Buff with Liquid Fire Item"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+In this example, I am using Liquid Fire which boosts my attack and speed by 5. You can see “+5” being added in the parenthesis next to attack and speed. Now, at the start of the next battle the effects will be applied right away allowing you to gain an advantage right from the start.
+<br>
+<br>
+<h3>Battle Rewards</h3>
+If you manage to win a battle, you will be given a reward in the form of gold. Gold can be used to buy more items in the shop. The amount you get is based on how many enemies you defeated. Each enemy randomizes the amount they give when you defeat them. The range is about 40-60 gold per enemy. If you fight more than one enemy, the reward value gets added up. This means, for fighting the 3 enemies currently in the game all at once, you can get an average of 150 gold. Later, I’ll add some sort of experience point system to this reward as well.
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_reward.gif" alt="Shows Battle Rewards"  style="width:60%; height:60%; display: block;">
+<br>
+<br>
+<h3>Overall Battle Polish</h3>
+My last main point about the battle system is the overall polish. I have changed the way attacks are calculated a few times now, and the current way is by far the most accurate and easiest to develop. In the previous system, when the attacks landed was controlled by the enemies. Whenever an internal counter reached and the enemy’s arrow reached a certain point, the attack would be executed. This system worked well but could be inaccurate due to a multitude of reasons. For one, the enemy would wait until both the timer and the arrow reached a certain point. However (thanks to speed) the timer and the arrow could get slightly desynced and over the course of the battle attacks would become less and less accurate. Speaking of speed, another problem was the point that the enemy was waiting for the arrow to reach wasn’t always accurate either. This was due to the calculation having problems with accounting for speed properly.
+<br>
+<br>
+The order of attacks would also get messed up. If one player didn’t attack, the whole system would break. In general, the order system would break randomly. It would have attacks not attacking at the right time or attacking all at once, it was awful.
+<br>
+<br>
+The final problem with the old system was because the enemies controlled the attacks, I would have to program attack calculation into every enemy. This means I could be writing the same code over and over for potentially hundreds of enemies.
+<br>
+<br>
+Thankfully, in the new system many of the problems are fixed. Now, the attacks are all controlled by the players that used the attacks. This makes way more sense and it really should have been like this from the beginning. This also means I may only need to program attack calculation code for a handful of objects rather than hundreds.
+<br>
+<br>
+This system is also more accurate. It makes use of the new arrow markers, so what you see is what you get (to an extent, I’ll get to that in a second). Whenever the player arrow reaches a marker on the timeline, it will execute that attack. Each player controls their own attacks making any order issues much more manageable. In general, the new system is more reliable and polished. However, there are 3 big problems I am still trying to figure out.
+<br>
+<br>
+One, framerate inconsistencies. If the framerate happens to dip or stutter a bit when an attack is supposed to happen it will just skip the attack, breaking the system. This one should be an easy fix, I just need to find out what is causing the inconsistencies in the first place and then patch it up with some framerate flexible code.
+<br>
+<br>
+Second problem, looping around the timeline can sometimes be wrong. It really depends on the situation, but for some reason when an attack loops around the timeline it can either be outside of the timeline or to far ahead. Again, this should be a simple fix. I’m guessing something is wrong with my calculations that I haven’t caught yet. However, I think the fix for this may come once I fix the biggest problem.
+<br>
+<br>
+By far, the worst problem is the enemy future arrow. This is where the future arrow marker appears on the enemy timeline. This is very important to get right because if it isn’t, it could be the difference between a defend phase and a wait phase. Something is just off about the calculation and, again, it has to do with speed. The system doesn’t accommodate speed enough, so sometimes the arrow placement could be shockingly early or embarrassedly late. I have tried every equation I can think of to no avail. The code I left for this update is a bandage fix that is close to correct, but not close enough. You can see what I mean if you watch some of the battle sections in the update video. I’m pretty sure once I fix this, my loop problem will fix itself too.
+<br>
+<br>
+<h3>Smaller Battle Changes</h3>
+Real quick, I want to mention some important but smaller changes/additions that have been made.
+<br>
+<br>
+•	When you loop around the timeline, the point reward you receive has been brought down to 2 (it was 3 before). This is to make skip more punishing by making you lose 1 point every time you use it regardless of loop. This is so people don’t just spam skip as an insta-win button.
+<br>
+•	The future colors are more accurate now. Most things only turn purple when they are changed to show that they will be affected in the future rather than turning purple at the beginning of the phase.
+<br>
+•	You can now only select targets that can be affected by the attack. For example, you can only use items on the players and not the enemies. If you try to select an enemy, it simply won’t let you. Same thing goes for most attacks, they can only target the enemies and not any of the players.
+<br>
+•	Before, the effects of healing moves (such as Heal, Choice Heal etc.) would be determined by your attack stat. Healing moves now have a fixed amount of healing power. This means attacks like Heal will always heal 5 HP regardless of your attack stat.
+<br>
+•	When you use an item, the name of the item floats by rather than the directs effects of that item. This is to avoid a huge clutter of numbers flying all over the place.
+<br>
+<br>
+<h2>What’s Next?</h2>
+So that is Update 8. It is a substantial update with lots of new features and many fixes to old ones. For those who don’t know what the plan is, I’m going to explain it again here.
+<br>
+<br>
+The plan for Project Phases is to make a demo that everyone can play. Update 10 is planned to be the release of the demo. The next 2 updates are really going to be a lot of polish and smaller additions. Some big things I want to add for the new update include…
+<br>
+<br>
+•	Start making/remaking sprites and tiles for the game.
+<br>
+•	Add Saving
+<br>
+•	Add a Simple Quest system
+<br>
+•	Add a Cutscene system
+<br>
+<br>
+I have already started some new sprites for the cave and some new designs for Daryl here…
+<br>
+<br>
+<img src="../../images/Updates/Update 8/update8_daryl.png" alt="WIP New Daryl Sprites"  style="width:45%; height:45%; display: inline; margin-bottom: 10%;">
+<img src="../../images/Updates/Update 8/update8_new_cave.png" alt="WIP New Overworld Cave Sprites"  style="width:45%; height:45%; display: inline;">
+<br>
+<br>
+I also want to start adding on the current systems, like adding new enemies and items. There are not going to be many new things, but it will be very polished and start to look like a game. From there, Update 10 will be adding more areas, NPCs, Quests etc. to make a demo for everyone to play. Even though it may be slightly ambitious, I am going to try and release the demo by the end of 2019. That gives me 3 months, wish me luck.
+<br>
+<br>
+We are getting close to 4 years of me working on Project Phases. I know I haven’t really made that much progress for 4 years, but I am still very proud for what I have been able to make. Once I release the demo, I’m not sure what I’ll do. I really would love to expand Project Phases into something more official and make a full game out of it. It depends if I think I can put that type of time into a big project like this and if people even want it in the first place. Only time will tell.
+<br>
+<br>
+If you want to stay up to date on all things Project Phases. Go follow me on Twitter, there I post about any new change I have made or new thing I am working on for Project Phases. I also announce there whenever I have a new dev-log on the website. You can also watch me work on the game live on my <LINK>twitch<LINK> channel. Lastly, you can follow me on YouTube to get any Update videos in your sub box.
+<br>
+<br>
+Thank you everyone so much for reading and following along with Project Phases. 2019 has been a great year so far for Phases. I have had a huge growth in interest recently and I can’t thank you enough. We are going to finish this demo, and hopefully it will be awesome.
+<br>
+<br>
+See you in Update 9.
+<br>
+<br>
+Thanks for reading,
+<br>
+<br>
+Andy
+
+</p>
+</div>
+
+</div>
+<footer id="main_footer">
+	<p>&copy; Soltairus Website</p>
+	<div id="main_footer_links">
+			<a target="_blank" href="https://twitter.com/soltairus">Twitter</a>
+			<a target="_blank" href="https://www.youtube.com/channel/UCDMWA2XwUlxsRsmgY9oa7dg">Youtube</a>
+			<a target="_blank" href="https://www.twitch.tv/soltairus">Twitch</a>
+	</div>
+</footer>
+
+</body>
+</html>
+>>>>>>> e825002f6c03e93dd3e391808e79a657416e9f32
