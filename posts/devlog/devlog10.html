@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solatirus Website - Dev-log #10: New Overworld Elements></title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133298626-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-133298626-1');
+	</script>
+	<link rel="stylesheet" type="text/css" href="../../css/post_page.css">
+	<link rel="icon" type="image/png" href="../../images/icon.png">
+	<meta name="description" content="Dev-Log #9: Future Arrow Mechanics Explained">
+	<meta name="keywords" content="Project Phases, Updates, Soltairus, Website, GameMaker, Dev-Log, Developer Log, Development, 10, Overworld Elements">
+	<meta name="author" content="Soltairus">
+</head>
+<body>
+
+<header id="main_header">
+	<div class="container">
+		<a href="../../index.html"><h1>Soltairus</h1></a>
+	</div>
+</header>
+
+<nav id="navbar">
+	<div class="container">
+		<ul>
+      <li><a href="../phases.html">Project Phases</a></li>
+			<li><a href="../updates.html">Phases Updates</a></li>
+			<li><a href="../devlog.html">Dev-Logs</a></li>
+			<li><a href="../reviews.html">Reviews</a></li>
+			<li><a href="../other.html">Other Posts</a></li>
+			<li><a href="../archive.html">Archive</a></li>
+			<li><a href="../about.html">About</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+<div id="post_header"><h1>Dev-log #10: New Overworld Elements</h1>
+  <p>
+    October 19, 2019.
+  </p>
+</div>
+<hr>
+<div id="post_text">
+  <!-- INTRO -->
+<p>
+  Hey everyone! This is the tenth dev-log on this website, which is honestly a bit crazy. I’ve had this website for 2+ years, and I’m happy to still be doing stuff on it. Thank you for continuing to read these dev-logs and here's to many more to come.
+  <br>
+  <br>
+  Anyways, today I want to talk about many new overworld elements. I plan to complete revamp the overworld but the end of Update 9 and expand it even more for the demo release in Update 10. So here are the first few changes and additions.
+  <br>
+  <br>
+  <h3>New Cave Graphics</h3>
+  Most of the new changes so far are in the cave. The biggest change is the updated tile-set. The cave looks much better now, and it makes it much more interesting to explore.
+  <br>
+  <br>
+  <img src="../../images/Dev-Logs/dev10/dev10_cave1.png" alt="The first floor of the Cave"  style="width:60%;  display: block;">
+  <br>
+  <img src="../../images/Dev-Logs/dev10/dev10_cave2.png" alt="The second floor of the Cave"  style="width:60%;  display: block;">
+  <br>
+  <img src="../../images/Dev-Logs/dev10/dev10_cave3.png" alt="The three floor of the Cave"  style="width:60%;  display: block;">
+  <br>
+  The cave has three floors, each one bigger than the last. I still want to make a few smaller rooms in the cave so stay tuned.
+  <br>
+  <br>
+  <h3>Updated Chests</h3>
+  Chest have been updated. They can now hold multiple items in one chest. These items can be many of the same items or mixed and matched. In this example, I have a chest that has both a piece of armor and a weapon inside.
+  <br>
+  <br>
+  <img src="../../images/Dev-Logs/dev10/dev10_chest.gif" alt="Chest with multiple items"  style="width:60%;  display: block;">
+  <br>
+  <h3>Doors</h3>
+
+  We now have doors in the game. The only one right now is on the third floor of the cave. If you approach the door you can press “E” to interact with it. If you do not have the key, the door will not open and a message will appear. Right now, the “Cave Door Key” is needed to open this door. Once you acquire it, the door will swiftly open into the ground.
+  <br>
+  <br>
+  <img src="../../images/Dev-Logs/dev10/dev10_door.gif" alt="New Doors with keys needed"  style="width:60%;  display: block;">
+  <br>
+  Small things to note. Doors don’t have to have keys to open them and they also don’t open from behind. They also stay open once you open them regardless if you leave the room or not. I may make one-way doors in the future, but as of now I don’t see any reason for them.
+  <br>
+  <br>
+
+  <h3>Depth System</h3>
+  A depth system controls where objects appear in relation to other things. For example, if you are behind the sign, your sprite should be behind the sign, not in front of it. This works both ways, so if you are in front of the sign you stay in front of it. Here is an example…
+  <br>
+  <br>
+  <img src="../../images/Dev-Logs/dev10/dev10_depth.gif" alt="New Depth System"  style="width:60%;  display: block;">
+  <br>
+  Neat right? Having this system helps sell the illusion of depth. It also ensures that no 2 objects will be on top of each other incorrectly.
+  <br>
+  <br>
+  <h3>Updated NPCs & Signs</h3>
+  NPCs and signs have both been updated to work more efficiently. This is a back-end change but it is very important for keeping Phases organized and optimized.
+  Before, for each sign I made a seperate object. So to have three signs in the overworld, it would take three separate signs called “sign1”, “sign2” and “sign3”. It could get out of hand very quickly and it would be a nightmare if I wanted to make a change to the sign system. Now, every sign is the same sign but with different text. So, if I have one hundred signs in the overworld it will only really be one in the back-end. Signs now also have collision which allows them to work properly with the depth system.
+  <br>
+  <br>
+  A similar change has been made for NPCs. Before, each NPCs (like Alex and Chris) were 2 seperate objects, the characters themselves and the hitbox. Now, every NPC shares one hitbox and each NPCs is only one object. Their hitboxes have also been adjusted to work better with the new depth system. This effectively cuts in half the amount of object I would have to manage.
+  <br>
+  <br>
+  <h3>Saving</h3>
+  The last change is arguably the biggest. You now have the ability to save the game! We are using a system made by the amazing <a target="_blank"; href="https://www.youtube.com/user/999Greyfox">Shaun Spalding</a> that makes saving really easy and robust. Simply find a white flag waving around in the wind. These flags will allow you to save the game. Even better, if they have a red cross on it you will also be able to heal there.
+  <br>
+  <br>
+  <img src="../../images/Dev-Logs/dev10/dev10_flags.gif" alt="New save flags"  style="width:60%;  display: block;">
+  <br>
+  Once you save your game, you can load it from the title screen using the “Load” button on the right. I plan to update the title screen UI later, but for now this will do just fine. Once you load, you will start off exactly where you saved with all of your items and stats intact. Also, every enemy you defeat will not reappear and every chest/door that you have opened will stay open. I still have a few polish things to do with saving but overall it is working really well.
+  <br>
+  <br>
+  <img src="../../images/Dev-Logs/dev10/dev10_save.gif" alt="New save flags"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  That’s all I got for now. Next up, I want to finish redoing the graphics, starting with the overworld tiles. I also want to finish the battle system for the demo. It is nearly done, all I have to do is fix a few bugs and polish it. That’s the game plan for now, I’ll keep my social places updated so you can stay up to date.
+  <br>
+  <br>
+  Thanks for reading,
+  <br>
+  <br>
+  Andy
+</p>
+</div>
+</div>
+<footer id="main_footer">
+	<p>&copy; Soltairus Website</p>
+	<div id="main_footer_links">
+			<a target="_blank" href="https://twitter.com/soltairus">Twitter</a>
+			<a target="_blank" href="https://www.youtube.com/channel/UCDMWA2XwUlxsRsmgY9oa7dg">Youtube</a>
+			<a target="_blank" href="https://www.twitch.tv/soltairus">Twitch</a>
+	</div>
+</footer>
+
+</body>
+</html>
