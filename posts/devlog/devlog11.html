@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soltairus Website - Dev-log #11: Even More New Overworld Elements></title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133298626-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-133298626-1');
+	</script>
+	<link rel="stylesheet" type="text/css" href="../../css/post_page.css">
+	<link rel="icon" type="image/png" href="../../images/icon.png">
+	<meta name="description" content="Dev-Log #9: Future Arrow Mechanics Explained">
+	<meta name="keywords" content="Project Phases, Updates, Soltairus, Website, GameMaker, Dev-Log, Developer Log, Development, 10, Overworld Elements">
+	<meta name="author" content="Soltairus">
+</head>
+<body>
+
+<header id="main_header">
+	<div class="container">
+		<a href="../../index.html"><h1>Soltairus</h1></a>
+	</div>
+</header>
+
+<nav id="navbar">
+	<div class="container">
+		<ul>
+      <li><a href="../phases.html">Project Phases</a></li>
+			<li><a href="../updates.html">Phases Updates</a></li>
+			<li><a href="../devlog.html">Dev-Logs</a></li>
+			<li><a href="../reviews.html">Reviews</a></li>
+			<li><a href="../other.html">Other Posts</a></li>
+			<li><a href="../archive.html">Archive</a></li>
+			<li><a href="../about.html">About</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+<div id="post_header"><h1>Dev-log #11: Even More New Overworld Elements</h1>
+  <p>
+     CHANGE DATE**October 19, 2019.***
+  </p>
+</div>
+<hr>
+<div id="post_text">
+<p>
+Hello everybody! Welcome back to another dev-log. This is the first website post of 2020… almost 5 months in….hm….
+<br>
+<br>
+...
+<br>
+<br>
+Anyways! Over the past few months I have been working primarily on the overworld and making that work well. Much of what I am going to show you in the dev-log is planned to be in the Project Phases demo. It feels awesome starting to work on stuff that you will actually be able to play. We got a lot of stuff to go through so let's get started.
+<br><br>
+<h2>Welcome to the Town of Arlette</h2>
+<br>
+Let me first introduce to you the town of Arlette. This is the starting town for the demo and Daryl’s (the main character) hometown. There are 4 separate areas in Arlette, the main town, North Arlette, South Arlette and East Arlette. Arlette also houses the North Cave, which you can get to by traveling through North Arlette. Let me show you some of it…
+<br>
+<INSERT GIF OF PANNING ACROSS THE TOWN (USE CAMERA MODES)>
+<br>
+<SOUTH ARLETTE>
+<br>
+<NORTH ARLETTE>
+<br>
+<Small Header>New Overworld Tiles<header>
+<br>
+These new areas are made up from new overworld tiles set that are higher resolution and (in my opinion) higher visual quality. Some of the already existing overworld elements have also been updated to match this new visual style like Daryl, who has gotten new sprites and walking animations.
+<br>
+<INSERT COMPARISON BETWEEN OLD AND NEW>
+<br>
+<Small Header> NPCs <Header>
+<br>
+All in all, the town is pretty small but there are quite a few villagers roaming around. These are some new NPCs. In the past, NPCs were limited to staying in one place and being talked to, but now they can move around freely. They will even face you when you talk to them.
+<br>
+<INSERT GIF OF VILLAGERS MOVING>
+<br>
+<Small Header> Houses <Header>
+<br>
+There are also several houses in Arlette, all of which you can go inside. There is a new house tileset for the interior. Of course, you may find NPCs inside a house, like Alex. It is his house after all. It is odd though, there seems to be more villagers than houses in Arlette. I wonder where everyone lives…
+<br>
+<GIF OR IMAGE OF ALEX’S HOUSE>
+<br>
+However, some house’s aren’t open to the public. You can’t just go into people’s houses without their permission! Because of this, some houses are locked and you can’t go inside without a key. Once you obtain the key, you can go inside freely.
+<br>
+<INSERT GIF OF HOUSE LOCKED THE BEING UNLOCK, MAKE A CHEST RIGHT NEXT TO ALEX’S HOUSE TO MAKE IT QUICK>
+<br>
+<Small Headers> Other Elements <Header>
+<br>
+There are some other new elements. First is the new shop stand, where Chris the shopkeeper will stand waiting for you to buy his wares. Of course, you can only talk to him from the front. You are not allowed to go to the back, you could steal something!
+<br>
+<IMAGE OF SHOP STAND>
+<br>
+After lots of shopping, you may feel inclined to rest in some shade. Luckily, there are trees around the village. These trees sway from side to side, occasionally dropping leaves.
+<br>
+<GIF OF TREES>
+<br>
+While you’re sitting under the tree, you spot a villager running towards the edge of the map. Oh no! What will happen if he manages to leave Arlette! Thankfully, the village of Arlette have already thought this through and placed fences all over the town to ensure no one leaves accidently. Don’t worry though, I hear you can leave Arlette through the east passage, but you wouldn’t have to do that unless something bad happened....
+<br>
+<IMAGE/GIF OF FENCES>
+<br>
+After realizing that Arlette resembles a prison, you go towards your house. You go there from the back and somehow manage to end up behind the house. In normal circumstances, you wouldn’t be able to see Daryl, however, some objects will fade out when you go behind them to allow you to still know where you are.
+<br>
+<GIF OF FADE OUT>
+<br>
+<HEADER> Overworld Gameplay and Backend Changes <HEADER>
+<br>
+In addition to all of the new town assets, there have been a few changes to the overworld gameplay and backend system that help organize everything.
+<br>
+
+<Small Header> Updated Dash <Header>
+<br>
+There are a few features I have barely touched since Project Phases inception, one of which being the dash mechanic. When you press Shift, you briefly get a huge burst of speed. Once it is over, you will go back to normal speed. You have to wait a few seconds for it to recharge before you can use it again, pretty simple. I implemented it because I wanted to have a sprint function, but at the time I was too inexperienced with programming and couldn’t figure out how to make spriting work, so I made a dash instead. I could make the sprint function I originally envisioned, but I am so used to the dash at this point that I didn’t want to change it.
+<br>
+However, the dash felt awful. There was no flow to it, it would just increase your speed suddenly and stop you instantly. It had the same feeling as running on the moving walkways you find at an airport and the awful feeling that you get once you run out of speed. However, it is now much better with a more subtle speed increase and a gradual slow down that makes it feel more like a dash rather than a rocket hitting a wall.
+<br>
+<MAYBE GIF OF OLD AND NEW DASH?>
+<br>
+<Small Header> Transitions <Header>
+<br>
+We have transitions now! No more are the day of instantly (and quite jarringly) being teleported to a new area. There are 2 transitions, a general overworld transition and a battle transition.
+<br>
+The overworld transition is a simple fade in/out to black. Nothing crazy but it is definitely an improvement. This transition occurs whenever you enter a house or move into a new area.
+<br>
+<GIF OF OVERWORLD TRANSITION>
+<br>
+The battle transition occurs whenever you enter a battle. It consists of black bars swiping over the screen revealing a battle underneath. This transition also has a random element to it. Everytime the transition is played, a random number of bars are chosen as well as the speed at which those bars move across the screen. It’s a small change, but interesting nonetheless. The only thing this transition needs is sound effects and I think it will be ready for battle.
+<br>
+<GIF OF BATTLE TRANSITION>
+<br>
+<Small header> Updated Chests (again) <Header>
+<br>
+In the last dev-log, I mentioned how I updated how I organize the signs. Before I changed it, every sign was a unique object like sign1, sign2, and sign3. However, I changed it to where there is only one sign object that I can change the text of whenever I place a new one. This helps cut down on the number objects in the game and if I had to make a change to the signs I would only have to make that change once rather than dozens of times.
+<br>
+I now have updated the chests to follow a similar system. I now tell a singular chest what items to hold when I first create it. I also added official support for upside-down chests, if you want to open it from the bottom rather than the top. Lastly, if a chest holds multiple items and you can’t carry one of them because you are maxed out, you will get a message telling you that you are carrying too many items and the chest will close.
+<br>
+<INSERT GIF OF RIGHT SIDE UP AND UPSIDE DOWN CHEST, ONE OF THEM WILL CLOSE BECAUSE YOU DON’T HAVE THE SPACE (USE THE ONE IN THE MAIN CIRCLE)>
+<br>
+<Small header> Performance Optimizations <header>
+<br>
+Another thing I have been working on is performance optimization. As I have been adding more and more elements to the game, I have to keep an eye on how many objects are in the game at any given time to keep the performance up. I’ve been doing a good job of this with many of the new elements, but the older elements needed a lot of work.
+<br>
+For example, the little “E” icon that appears over any object you can interact with (like a NPCs, Door, Chest etc.) was a huge memory hog. This is because every object that needed it would create an instance of that symbol when they were created and would simply make it invisible until the player got close enough. This meant, if I had 5 NPCs, 3 Chests, and 2 Houses, there would be 10 instances of the “E” icon in the background waiting to be activated. I did it this way to begin with because I didn’t know any better when I first made it, but now I have fixed it to where the icon only gets created when it is needed and destroyed when it is unnecessary.
+<br>
+This philosophy of fixing much of my old code has been my big focus in terms of optimization. I already did a lot of this by updating the Chests, NPCs, Signs etc. but there is still a lot to fix. However, it is improving and hopefully I will be able to update a large majority of the old code for the demo release.
+<br>
+One last thing about the “E” icon. It now has a new fade in/out animation instead of just popping into existence. Nice.
+<br>
+<INSERT BEFORE AND AFTER OF THE E ICON>
+<br>
+<HEADER> Battle Change (yes singular) <HEADER>
+<br>
+I have pretty much been working exclusively on the overworld for a while as you can see from all of the new additions, so the battles haven’t really gotten any changes. However, there is one addition I wanted to make earlier that I didn’t get a chance to for Update 8 that I added.
+<br>
+When you hover over a future arrow marker (or the order slot in the order pane) you get information about the attack that arrow is referencing. This is nothing new. However, did add one more line to this information, the attack effects. Now you can see how much damage a move will do or what effects and item will have from this menu.
+<br>
+<INSERT PICTURE OF BATTLE MENU>
+<br>
+<HEADER> What’s Next <HEADER>
+<br>
+With this dev-log, I am about 45% done with Update 9. I pretty much split Update 9 into the overworld and battle sections, and I did the overworld first. The last few overworld additions and most arguably the most important being the Quest and Cutscene systems. I wasn’t sure how long those were going to take, so I figured I would get this dev-log out before I started those.
+<br>
+Once I am finished with the overworld, I will move on to the battle system side of Update 9. This consists of a lot of polishing, final touches and more enemies. On paper, it shouldn’t be as much content as the overworld side, but that doesn’t mean it won’t take awhile.
+<br>
+In the <LINK>Update 8<LINK BLANK> post, I said I was going to try and release the demo by the end of 2019, as you can see, that did not happen. I am currently writing this while the world is still in quarantine due to the Coronavirus. Not going to lie, this extra time has been extremely useful for working on Phases. I’m hoping I can finish Update 9 sooner rather than later using this time I have, let’s hope for the best.
+<br>
+As I briefly mentioned before, many of the things in this dev-log are planned on being final for the demo. To not spoil the demo, <b>I have decided I will only be showing the Arlette portion of the demo</b>. Arlette is the starting area (it’s about ⅓ of the demo) and I have planned quite a bit of stuff after you leave the town, but you will have to play the demo to find out what adventures await. Luckily, I feel like I have a really good foundation for building new areas and making a playable demo out of Phases so adding a bunch of content shouldn’t be difficult at all.
+<br>
+As always, I need to thank anyone who read this whole dev-log. It means so much to me that you care about Phases and I ask that you keep caring until you can finally play it. Thank you so much!
+<br>
+If you want to stay up to date on the latest Project Phases happenings, go follow my <LINK>Twitter<LINK>. You can also subscribe on <LINK>Youtube<LINK> and follow on <LINK>Twitch<LINK> for videos and streams of Phases, but I definitely don’t do stuff there as much as Twitter. I have also been super active on Discord, primarily the <LINK>Unique Indie RPGs<LINK> server ran by <LINK>MustardPlus<LINK>. It is an awesome server filled with some really awesome projects and people. If you have a game of your own or even if you don’t, come on by, we would love to have you.
+<br>
+I wrote all of this in one sitting, I usually don’t do that so I’m going to go chill for a little bit. Go ahead and do the same.
+<br>
+Thanks for reading,
+<br>
+Andy
+
+</p>
+</div>
+</div>
+<footer id="main_footer">
+	<p>&copy; Soltairus Website</p>
+	<div id="main_footer_links">
+			<a target="_blank" href="https://twitter.com/soltairus">Twitter</a>
+			<a target="_blank" href="https://www.youtube.com/channel/UCDMWA2XwUlxsRsmgY9oa7dg">Youtube</a>
+			<a target="_blank" href="https://www.twitch.tv/soltairus">Twitch</a>
+	</div>
+</footer>
+
+</body>
+</html>
