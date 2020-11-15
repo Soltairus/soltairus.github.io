@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soltairus Website - Update 8</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133298626-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-133298626-1');
+	</script>
+	<link rel="stylesheet" type="text/css" href="../../css/post_page.css">
+	<link rel="icon" type="image/png" href="../../images/icon.png">
+	<meta name="description" content="Project Phases Update 8">
+	<meta name="keywords" content="Project Phases, Updates, Soltairus, Website, GameMaker, Update 8, Shops, Buff, Polish">
+	<meta name="author" content="Soltairus">
+</head>
+<body>
+
+<header id="main_header">
+	<div class="container">
+		<a href="../../index.html"><h1>Soltairus</h1></a>
+	</div>
+</header>
+
+<nav id="navbar">
+	<div class="container">
+		<ul>
+      <li><a href="../phases.html">Project Phases</a></li>
+			<li><a href="../updates.html">Phases Updates</a></li>
+			<li><a href="../devlog.html">Dev-Logs</a></li>
+			<li><a href="../reviews.html">Reviews</a></li>
+			<li><a href="../other.html">Other Posts</a></li>
+			<li><a href="../archive.html">Archive</a></li>
+			<li><a href="../about.html">About</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+<div id="post_header"><h1>Update 8: Shops, Buffs and Polish</h1>
+  <p>
+    September 7, 2019
+  </p>
+</div>
+<hr>
+<div id="post_text">
+  <!-- INTRO -->
+<div class="video_container">
+    <iframe width="789" height="444" src="https://www.youtube.com/embed/pdyNj4_7P_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<hr>
+<p>
+
+  Hello everybody!
+  <br>
+  Welcome to Update 9 of Project Phases. This is the culmination of a year of work and like always this is the biggest update yet! Seriously, after I finished writing this, the page count was almost 20 pages! To put that into perspective, the previous longest post on this website was 6 pages, so buckle in. This update is also special since it is the last one before the demo release. I’ll talk about that more in detail and then. But without further ado, let's go over the new additions!
+  <br>
+  <br>
+  <HEADER>Overworld
+  <br>
+  <br>
+  <header> New Sprites/Tiles
+  Right off the bat we have a very big change, the new graphics (again)! This is the third and final time I have updated the graphics, but this one looks better than any of the other ones. The tiles have increased in size from being 16x16 to 32x32. I tend to have a hard time with drawing art, but I am really happy with how these tiles turned out. You’ll see more of the new overworld sprites and tiles as we go through the update. Here are some looks at the updated tiles for the overworld and cave. I also want to give a quick thank you to <Link>@MidnitePixel<LINK> for giving me a few pointers on how to make good looking tiles.
+    <br>
+    <br>
+    <img src="../../images/Updates/Update 9/update9_cave_tiles.png" alt="Image of new cave tiles" style="width:45%; height:45%; display: inline; margin-right: 4%;">
+    <img src="../../images/Updates/Update 9/update9_overworld_tiles.png" alt="Image of new overworld tiles" style="width:45%; height:45%; display: inline;">
+    <br>
+    <br>
+  We also have a new sprite for Daryl with proper animations! I definitely had a harder time animating Daryl than I had with any of the tiles but I think it looks pretty alright. Here is a comparison to the old and new (the old one is laughably bad).
+  <br>
+  <br>
+  <img src="../../images/Updates/Update 9/update9_old_daryl.gif" alt="Image of new cave tiles" style="width:45%; height:45%; display: inline; margin-right: 4%; margin-left: 8%;">
+  <img src="../../images/Updates/Update 9/update9_new_daryl.gif" alt="Image of new overworld tiles" style="width:26.5%; height:45%; display: inline;">
+    <br>
+    <br>
+  <header> Welcome to Arlette
+  Where are we anyways? The starting town is called Arlette. It's a peaceful town with a few houses and villagers roaming around. It’s split up into multiple areas, the main town, North, South and East.
+  <br>
+  <br>
+  <img src="../../images/Updates/Update 9/update9_arlette_pan.gif" alt="Pan across the village of Arlette"  style="width:45%;  display: inline; margin-left: 4%;">
+	<img src="../../images/Updates/Update 9/update9_arlette_north.gif" alt="Pan across the North Arlette"  style="width:45%;  display: inline;">
+	<img src="../../images/Updates/Update 9/update9_arlette_south.PNG" alt="Image of South Arlette"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  It’s still a work in progress, but it’s coming along.
+  <br>
+  <br>
+  <header>Updated NPCs
+  Arlette has many villagers roaming around. NPCs now have their own animations and walk around within a given range. They will even turn to face you when you talk to them!
+  <br>
+  <br>
+    	<img src="../../images/Updates/Update 9/update9_villagers.gif" alt="Gif of villagers"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <header>Updated Textboxes
+  Talking to NPCs also shows the new updated textboxes. Textboxes now have portraits and names for whoever/whatever you are talking too. This applies to anything that uses the textbox. For example, if you are talking to Alex, the textbox name in the textbox will be “Alex” with a portrait of him. However, if you are opening a chest, the name will be “Chest” and it will be a portrait of the chest. Finally, textboxes have sound! This isn’t something I can show off in a gif, but make sure to check out the Update 9 YouTube video to hear it.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_textboxes.gif" alt="Gif of textboxes"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <header>Houses
+  And where do these villagers stay? Well in houses of course. There are a few houses scattered around Arlette, all of which have some special properties. First, sometimes the house may be locked and you will not be able to go inside. You wouldn’t want a random person in your house! Some houses can not be opened at all, but some can if you have the right key. As an example, let’s show how to break into Alex’s house...
+  <br>
+  <br>
+      <img src="../../images/Updates/Update 9/update9_house_locked.gif" alt="Gif of house being unlocked"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  Going inside a house shows another new tileset, with nice wooden floors and white walls. You may even see a painting or two.
+  <br>
+  <br>
+      <img src="../../images/Updates/Update 9/update9_house_tiles.png" alt="House Tile Set"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <header>Other New Overworld Elements
+  There are still plenty of new overworld elements to go over. First we have trees, which sway in the wind and drop leaves. Smaller clusters of trees like the ones near the water are animated but bigger clusters are not.
+  <br>
+  <br>
+      <img src="../../images/Updates/Update 9/update9_trees.gif" alt="Gif of swaying trees"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  There are also fences surrounding Arlette which keep you from going outside the town. Wouldn’t want villagers to get lost now would we?
+  <br>
+  <br>
+      <img src="../../images/Updates/Update 9/update9_fences.gif" alt="Gif of fences stopping you from walking outside of town."  style="width:60%;  display: block;">
+    <br>
+    <br>
+  The shop has gotten a minor upgrade too. Chris the shopkeeper has gotten enough funds to make his own shop stand. It’s right on the path to Alex’s house, you can’t miss it. If you want to talk to him, you can only do so from the front. He wouldn’t want you sniffing at his wares.
+  <br>
+  <br>
+      <img src="../../images/Updates/Update 9/update9_shop_stand.png" alt="Shop Stand"  style="width:60%;  display: block;">
+  <header>North Cave
+    <br>
+    <br>
+  Heading up to the North Cave, you will see that the graphics have changed here as well. It looks far better now, with more colors than just grey. Here is a before and after…
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_old_cave.PNG" alt="Image of old cave" style="width:45%; height:45%; display: inline; margin-right: 4%;">
+    <img src="../../images/Updates/Update 9/update9_new_cave.png" alt="Image of new cave" style="width:45%; height:45%; display: inline;">
+    <br>
+    <br>
+  <header>Cave door
+    <br>
+    <br>
+  Going down a few floors in the cave, you will find a vault door blocking your path. The door is locked, however you can unlock it if you have the proper key. Once you find it, the door will fall back into the ground allowing you to walk through.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_cave_door.gif" alt="Cave door being locked and then opened."  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <header>New and Updated Systems
+  There are also many new and updated gameplay systems to go over.
+  <br>
+  <br>
+  <header>Saving
+  A big (and long overdue) addition is the ability to save. You may see flags waving around the overworld. These are save flags, and interacting with them will save your game. If the flag has a red cross on it, it will also heal the party.
+  <br>
+  <br>
+  <img src="../../images/Updates/Update 9/update9_normal_flag.png" alt="Normal Save Flag" style="width:45%; height:45%; display: inline; margin-right: 4%;">
+  <img src="../../images/Updates/Update 9/update9_heal_flag.png" alt="Healing Save Flag" style="width:45%; height:45%; display: inline;">
+    <br>
+    <br>
+  To load your game, simply hit the load button on the title screen and you will be placed right where you left off.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_saving.gif" alt="Showcase of saving"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <header>Quests
+    <br>
+    <br>
+  The game now has a quest system. When you start a quest a notification will appear in the top right corner. If you click on this notification, it will take you to the quest tab in the menu and open that quest. You can also get here manually by opening the menu and pressing the quest tab. In this tab, you can see what the quest is and what you must do to complete it. Once you have successfully done everything for that quest, the quest will be complete and taken off the list. Here is a gif showing a mock quest in action. The quest progression is finding Alex’s house locked, finding the key and then talking to Alex.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_quest.gif" alt="Showcase of quests"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <header>Cutscenes
+  Another overdue addition is cutscenes! Once you trigger one, black bars will come from the top and bottom and the cutscene will begin. Characters can move, animate and more automatically during cutscenes. However, there is still some player input since it is up to the player to advance textboxes. Here is a cutscene involving the shop keeper Chris...
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_cutscene.gif" alt="Showcase of Chris cutscene"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  This cutscene system works very well and should help quite a lot when it comes to developing story and characters during the demo. Huge thanks to <LINK> FriendlyCosmonaut <LINK> for creating the basis for this system.
+    <br>
+    <br>
+  <header>Transitions
+  There are also new transitions between scenes and rooms. In the past, whenever you enter a battle or a new area, the new area would just appear. Now we have 2 transitions, a basic fade in/out and a battle transition. I’ll show you the battle transition when we get to the battle section, but here is the fade transition. This transition plays whenever you go between areas or at the end of a battle. You may have already spotted it in some of the other gifs, but here it is again.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_fade.gif" alt="Fade transition"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <header> Updated Sprint
+    <br>
+    <br>
+  The sprint in Phases has gone through many changes. For the longest time it was a giant boost of speed that you got when you pressed shift. In my last <link>dev-log<link>, I mentioned that I updated it to not be such an abrupt change in speed by giving it more of an acceleration and deceleration curve. However, one of my friends saw the sprint and said, “That’s dumb, why not just have it speed you up slightly whenever you hold down shift.” And you know what, he’s right. So now you speed up slightly when you hold shift. Gone is the burst of speed. However, in the future this may change again because I can never make up my mind on this (especially if we can get a roll animation).
+  <br>
+  <br>
+  <header>Updated Camera
+  I have also updated the camera. I never really messed with the camera much before, in fact I used the camera built into Gamemaker for a good while. However, I needed to update the camera to allow it to work properly with cutscenes. You may have noticed in some of the gifs that I am now able to get panning shots. This is because I can now move the camera freely. I can also move it to follow any object I want, don’t know how useful that is but that is cool. Once again, thanks goes out to <LINK> FriendlyCosmonaut <LINK> for being the foundation for this system. Here is a gif of crazy camera shenanigans.
+    <br>
+    <br>
+    <img src="../../images/Updates/Update 9/update9_camera.gif" alt="New Camera"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <header>Updated Chests
+  Chests have once again been updated. They are a bit smarter now. If a chest is holding an item that you can’t carry for whatever reason (either you are holding too many items or you don’t have enough space for it), the chest will close back up and not allow you to get items. Now, the maximum number of unique items you can have is 99, so the odds of this ever being an issue is small but it's still good to have.
+  <br>
+  <br>
+  Chest now also properly supports being upside-down and can only be opened in one direction. Causing overall less bugginess when dealing with chests. An upside-down chest looks a bit off because of the shadow, but a quick sprite change should fix. To knock out multiple birds with one stone, here is an upside-down chest, only able to be opened in one direction, not allowing you to take the items because you have too many.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_chest.gif" alt="New Chest Upgrades"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <header>Depth System
+  Finally, we have the depth system. This allows Daryl to appear in front or behind an object correctly depending where he is. This is necessary with creating the illusion of depth within the game, and it works perfectly. Thanks to this, sometimes when you are behind something, you can’t see Daryl. In these cases, the object will become transparent so you are still able to see where you are going.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_depth.gif" alt="Depth System Showcase"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  That is almost everything new in the overworld, there are a few more things but they are related to the battle system so we will round back around to them afterwards.
+  <br>
+  <br>
+  <HEADER> Battle Changes
+    <br>
+    <br>
+  As we jump into a battle, you will see a big difference right away. First off, there is a new battle transition! A bunch of rectangles swipe the screen revealing the battle underneath. It has a pretty cool look to it. A bigger change is… well, I’ll let this gif speak for itself…
+  <br>
+  <br>
+  <img src="../../images/Updates/Update 9/update9_battle_reveal.gif" alt="New Battle Graphics Reveal"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  That’s right! The battle system has gone through a massive visual overhaul. I have to give a huge thanks to my more artistic friends who stepped up to make this update possible. All praise for the graphics should be directed towards them. They have come up with some cool designs and have really given personality to the battles.
+  <br>
+  <br>
+  Battles before were very basic, with the black background and barely animated characters, but that has all changed. As I go through all of the new changes keep in mind this is still a work in progress and there are still many sprites and animations still to be made.
+  <br>
+  <br>
+  <Header> Characters
+    <br>
+    <br>
+  Every character has been redesigned from scratch and have been given animations for everything including attacking, healing, using items, damage, idling and more! Let’s go through them…
+  <br>
+  <br>
+  <Header> Daryl
+    <br>
+    <br>
+  Daryl’s new design has him sporting a white shirt and purple jacket. His sword has also been upgraded to a sweet looking purple blade that slashes cleanly through the air. In his idle animation, he can even spin it around and hover in the air briefly. He should be more careful coming down though…
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_daryl_battle.gif" alt="New Daryl Animations"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  <Header> Clint
+    <br>
+    <br>
+  Clint’s design was inspired by him being the healer of the group. His weapon was called “Clint’s Staff of Healing” so we gave him a wizard/mage aesthetic. He dons a green robe and always keeps his trusty staff by his side. Many of his animations show his green magic in action and his use of a heart-shaped crystal to power his healing spells.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_clint_battle.gif" alt="New Clint Animations"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  <Header> Oliver
+    <br>
+    <br>
+  Oliver is the tank of the party, able to dish out and take heavy damage. His new design shows his brute strength. When attacking, Oliver becomes engulfed in flames powering up his punches even more! No wonder he can break a defend phase with ease. He is a bit cocky about it though...
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_oliver_battle.gif" alt="New Oliver Animations"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  <Header> Clockman
+    <br>
+    <br>
+  We took a completely different approach to Clockman’s clock motif. The original design was more based on an analog clock, with his hands literally being clock hands. In this new design, his face is an analog clock, but his arms are more like the straps of a wristwatch. His lower half is inspired by the exposed gears of a grandfather clock as well as the wheels which he moves on. I’ll be honest, when I first saw this new design, I wasn’t a huge fan. But once we got it animated, it really came together and it has become one of my favorites.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_clockman_battle.gif" alt="New Clockman Animations"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  <Header> Crocman
+    <br>
+    <br>
+  It’s Crocman! This vicious crocodile has gotten a lot more friendly looking since we last saw him. However, don’t let looks deceive you, he is still vicious and he will tear you apart with his scarf whip! Crocman definitely seems to be the favorite new design out of the bunch from the community, and it’s easy to see why. The artists did an awesome job creating a menacing yet adorable little design, and his attack animation is just sweet.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_crocman_battle.gif" alt="New Crocman Animations"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  <Header> Lockman
+    <br>
+    <br>
+  Last but not least is Lockman. Out of all the designs, Lockman stayed the most consistent. He is a classy gentleman that opens for no one! His suit has been given a new color scheme and his lock head has been redesigned to be harder to pick. We had trouble picking what his lower half would look like, so there are a bunch of funny beta sprites, check them out!
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_lockman_battle.gif" alt="New Lockman Animations"  style="width:60%;  display: block;">
+    <img src="../../images/Updates/Update 9/update9_lockman_beta.png" alt="Lockman Beta Designs"  style="width:60%;  display: block; margin-top: 2%;">
+    <br>
+    <hr>
+    <br>
+    <img src="../../images/Updates/Update 9/update9_all_chars.gif" alt="All new characters"  style="width:95%;  display: block;">
+    <br>
+    <hr>
+    <br>
+  So that’s the new lineup. I think they all turned out fantastic and I can’t wait to show you some more down the line.
+  <br>
+  <br>
+  <Header> Background
+    <br>
+    <br>
+  The boring black background is no more! The new background is based on the overworld area and takes heavy inspiration from the overworld tiles. There are many other elements at play here too. The trees in the background are randomized, so you will never get the same layout and swaying of trees. There are also randomized clouds floating by in the background. You may also notice a few swaying flowers on the ground which are also, you guessed it, randomized. I think you can see the trend here.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_background.gif" alt="Battle Background"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  Our objective with the new background was to make it visually interesting enough where it could look pleasant, but not too over the top to not take your attention away from the battle. I think we did a good job on that overall.
+  <br>
+  <br>
+  As you may have been able to figure out, there will be area specific backgrounds in the future. So if you have a battle in the cave, you will have a different cave background. As of now however, we only have the one background so please stay tuned for more!
+  <br>
+  <br>
+  <Header> New UI
+    <br>
+    <br>
+  Another big change has been the UI. Everything has gotten a complete overhaul visually and functionally. Allow me to list them out...
+  <br>
+  <br>
+  <Header> New Timelines
+    <br>
+    <br>
+  Timelines now have a gradient within them and have a border surrounding them. They are also more dynamic, able to change color depending on various timeline effects and even crack when your defense is broken. The new looks lets them blend in much better with the overall style.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_defense_break.gif" alt="New timeline defense break"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  The way timelines are made has also been updated. Before, every timeline was a sprite that I made outside of GameMaker. I would then have to import the sprite, make a timeline parent object and make three unique hitboxes for each phase. So, by the time I had six characters on screen, I had 24 different objects just for timelines alone! Now, this has been changed. Timelines are now completely made in- engine using code. All I have to do is plug in what phases I want a character to have and in what order and it will create the timeline for me. Instead of four objects (a timeline and three hitboxes) for each character, there are now five objects (enemy and player timelines plus 3 hitboxes) that can be used universally, cutting down on 19 objects.
+  <br>
+  <br>
+  This change allows timelines to be created using numbers, which means they can be randomized which is perfect for enemy encounters. I still don’t entirely know how enemy encounters will work in the final game, but this new mechanic will most certainly help. It also allows me to make some wacky timelines like this one...
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_wacky_timeline.png" alt="Wacky timeline"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  So that’s fun.
+  <br>
+  <br>
+  The timeline arrow also got a slight redesign. It’s nothing to major, but it does have some added “texture” and of course all of the arrow colors and numbers have gotten slight updates as well. Timelines can get absolutely loaded, so these really help break up what’s going on.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_busy_timeline.gif" alt="Very busy timeline"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <Header> Selection Arrow
+    <br>
+    <br>
+  Speaking of arrows, another arrow that got a redesign is the selection arrow. This is the arrow that appears whenever you hover over a character to select them as the target of an attack. Before, it was literally a timeline arrow doubled in size and rotated 90 degrees. The new arrow is much more unique, resembling an actual arrow more than the triangle shaped timeline arrows. It even animates slightly, moving side to side as you hover.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_selection_arrow.gif" alt="New Selection Arrow"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <Header> Updated Menu
+    <br>
+    <br>
+  The main menu in the middle has also been updated. The old design had a lot of wasted space since I didn’t know what exactly would fill up the menu yet. I designed the new one around the UI elements to make a smaller and sleeker design. Here is a before and after...
+  <br>
+  <br>
+  <img src="../../images/Updates/Update 9/update9_old_menu.png" alt="Old Battle Menu" style="width:45%; height:45%; display: inline; margin-right: 4%;">
+  <img src="../../images/Updates/Update 9/update9_new_menu.png" alt="New Battle Menu" style="width:45%; height:45%; display: inline;">
+    <br>
+    <br>
+  The font has also been updated to be overall smaller as well. This font change applies to pretty much all the text in the battles.
+  <br>
+  <br>
+  <Header> Player Stats and Health Bar
+    <br>
+    <br>
+  Above all of the characters, you will see a brand new layout for viewing all of the character information. Before, player health, point and time were simply listed under their respective symbols in number form. It didn’t look very good. Now, all of these stats have been neatly organized in a collage.
+  <br>
+  <br>
+  The main attraction is the new health bar. This healthbar is quite dynamic and has a lot of cool features. First, if you select an enemy with an attack, the amount of damage that will be dealt will be reflected on the health bar. This also applies when healing allies. The health bar color will also change depending on what type of attack it is. If you are dealing damage, it will turn purple, pink for healing and if the attack will do a random amount of damage, it will turn orange. Here is a gif showing all the types…
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_healthbar.gif" alt="New Healthbar"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  Surrounding the health bar is the player point and time. Those are much more simple, they simply turn purple when they will be changed in the future. The counter for time also gets greyed out when you are not in your attack phase since it will not change otherwise
+  <br>
+  <br>
+  <Header> Freezing
+    <br>
+    <br>
+  Freezing is a pretty neat visual effect. Whenever a character starts their attack phase, every other character will freeze and become greyed out, while the character who is selecting the attacks remains unfrozen. It’s an effect that helps sell the “time has stopped” nature of the selecting in the attack phase. It also makes it even more clear who is attacking if it wasn’t already obvious enough. Some of the frames that you can freeze on look really neat, some are a bit more awkward. Here’s a look, pay attention to the other characters.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_freeze.gif" alt="Character Freezing"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  <Header> The Death Of Small Skip
+    <br>
+    <br>
+  The final UI change is actually a removal. The beloved small skip button has been removed. This was the button next to a player that said “Skip” that allowed you to skip the phase whenever you wanted. Let us have a moment of silence for the small skip button…
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_rip_skip.png" alt="Rest in Peace Small Skip"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  However! The legacy of the small skip button still remains! The small skip has been combined into the player sprite itself. The skip a phase, simply right click any of the players to skip their corresponding phase. Hooray!
+  <br>
+  <br>
+  <HEADER> Gameplay Changes
+    <br>
+    <br>
+  Now let's move onto some big gameplay additions and changes that have been added in this update. We already mentioned a few as they pertained to the UI but here are a few more.
+  <br>
+  <br>
+  <Header> Other Menu
+    <br>
+    <br>
+  One of the biggest battle changes is the new Other menu. This menu was here in the past, but it was empty, that is not the case anymore though. Clicking the Other menu will present you with three new moves. These aren’t really attacks, but are more like special actions that everyone can choose. Let’s go over them…
+  <br>
+  <br>
+  <header> Skip
+    <br>
+    <br>
+  The first on the list is Skip. You may be asking yourself, “There already are 2 way to skip, right?” and you would be correct. This is a new way to skip your attack phase. Clicking this action will add “Skip” to your order pane like an attack. This allows you to Skip the phase after you are finished attacking if you want to get out of the attack phase as soon as you finish your attacks. It takes 1 time and 3 points. Once you hit Skip, you won’t be able to assign any new attacks so keep that in mind.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_skip.gif" alt="Other Skip"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  <header> Inspect
+    <br>
+    <br>
+  Next up is Inspect. Inspect allows you to inspect the enemies to gain the ability to see their points. Previously, you were able to see the enemy points by default but now you have to work for it. Inspecting takes 2 points and 2 time. Once you have inspected, the enemy’s points will show up to the right of their health bar.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_inspect.gif" alt="Other Inspect"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  <header> Run
+    <br>
+    <br>
+  Finally, there is running. This allows you to run away from battles. However, simply selecting run isn’t enough. Running takes the entire attack phase to execute, meaning you cannot do any attacks in the same turn as you run. Running will also take away the ability for anyone to attack while you are running, regardless if you are in your attack phase or not. To successfully run, the character who is running must not get hit during the lead up to the run. If they do, the run is cancelled. Manage to not get hit however, and you can leave the battle. In this example, we successfully run then it is followed by a failed run...
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_run.gif" alt="Other Run"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  This system is quite unique. Running is a risk, since you limit your ability to attack. However, through careful planning, you should be able to run successfully whenever you want. Pro-tip, characters who are faster and have shorter attack phases are the best for running since they have to wait the least amount of time to run successfully, minimizing the chance of getting hit. So characters like Clint are ideal candidates. Good luck running with a speed debuffed Oliver though...
+  <br>
+  <br>
+  Those are the three other options. I hope you will be able to find good uses for all three of them. We have space for two so maybe we will fill those up too.
+  <br>
+  <br>
+  <Header> Hover Mechanics
+    <br>
+    <br>
+  There are some new mechanics that I call the hover system. Whenever you hover over an attack hitbox, several things will happen. First, a hover arrow will appear on every relevant timeline to show where that attack will land. So, if you are choosing Slash, an attack that targets the enemies, the enemy’s timeline will get the hover arrows. Second, the damage will be calculated and the health bar will update accordingly to show the new damage. It will also take the phase the attack lands into account such as if a Slash is projected to land in the defend phase, it won’t show any damage being done on hover. Lastly, if you are selecting an item (or an attack with healing properties), those effects will be shown as well. This includes adding points, time and health to players and showing buffs and debuffs. Let me show you what I mean in action…
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_hover.gif" alt="Hover arrow mechanics"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  This hovering mechanic also brings some other benefits. If you have selected an item, you can switch to the “Attack” menu and see how your attacks will be affected by the item such as an attack buff/debuff or a health change that affects Clint’s Revenge (previously Living Strike) attack.
+  <br>
+  <br>
+  This is a really neat mechanic that saves a lot of time since you can now see how every attack will affect every character at a glance.
+  <br>
+  <br>
+  <Header> Carry Over Mechanics (or at least the start)
+    <br>
+    <br>
+  The hover mechanic also gave me a chance to start implementing a mechanic I’ve wanted to add for a while, carry over. Let me give you an example of how it would work. If you select a Fury on Clockman, the enemy health bar would update to reflect the damage. Now, if you get into another attack phase <i>before</i> the Fury happens and time stops again, the damage that will be done by the Fury will show up again since it has yet to happen.
+  <br>
+  <br>
+  That is the basic idea of the carry over mechanics, to allow the future mechanics to carry over from player to player. I hope that makes sense. I wish I had something more to show, but it's still just a concept. The big issue with it is consistency. Let’s go back to the same example. That Fury attack isn’t guaranteed to hit, many things could happen to avoid it. The player could skip over the attack phase or maybe the enemy skips into a defend phase. How do I track whether an attack has happened or not reliably. I can’t just reset it every time you skip, since in most cases that won’t change the outcome. It’s a work in progress indeed.
+  <br>
+  <br>
+  I have implemented a little bit of this system however. If you are set to get a buff/debuff through an item, the buff/debuff icons will appear faded between attack phases. It’s small, but it is a start to the system. Hopefully we will be able to get more things carrying over later, but it honestly might not be feasible, so I will keep you posted.
+  <br>
+  <br>
+  <Header> Animation System
+    <br>
+    <br>
+  Though you may not think it, the animation system for Phases (and most games out there) is a lot more complicated than they may seem. For Phases in particular, the animation needs to work for the unique gameplay of the game. If we start an attack animation right when the attack lands, it will be too late. So, with the animation system, the animation will start early. In the code, I give the system an impact frame which is the frame of the animation where the actual attack happens. The game will then do some math and start the animation at the right time so that the impact frame will play when the attack is executed on the timeline. Check it out, it’s pretty neat.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_animation.gif" alt="Animation System"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  However, there is another element that throws a wrench in the system, speed. We have to make sure we take it into account when playing the animation. Luckily, the system has been programmed to be able to speed up an animation if needed. For example, if Oliver has a plus 50 speed buff, it may need to speed up his punching animation to make sure it lands properly.
+  <br>
+  <br>
+  Every character’s attack phase and moveset is different and we based the animations off this too. Since Oliver has a long attack phase with long, drawn out attacks, we can make his attack animation longer than Clint’s, who’s attack phase is quite short.r
+  <br>
+  <br>
+  <Header> Experience
+    <br>
+    <br>
+  You can now gain XP and level up your characters. This is a pretty overdue feature. It works as you’d expect, once you win a battle, you will gain a certain amount of XP. The amount you gain is based on which enemies you defeated and how many, similar to the gold system. Once you finish a battle, a message saying how much XP you got will fly out of the characters. At the moment, ending battles are really jarring, there isn’t any end screen or anything. I plan to add a more elegant battle results screen later, but this works for now.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_xp_fly.gif" alt="XP Fly"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  You can check your level and your XP amount in the overworld menu as well. Again, at the moment it’s just added on there without much thought, but we do plan on updating the overworld menus with the XP amount in mind.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_xp_check.gif" alt="XP Check in overworld"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  <Header> Updated Back-End Battle System...again
+    <br>
+    <br>
+  For those who have been here awhile, this may sound familiar. I have changed the battle system on the back-end many times at this point. However, this one is the biggest and most important out of them all and hopefully this should be the last major change. This next part is a bit technical and kind of long, so feel free to move onto the next point in the update if you want.
+  <br>
+  <br>
+  Let me quickly recap why I keep changing the system to begin with. The original system I made was created when I didn’t really know what I was doing. I had a lot of the basics of programming down, but I still had so much to learn. Because of this, much of my older code which is the foundation of the game is extremely outdated and unoptimized. And since the code is the core of the game, simply changing one thing means updating everything to match the change. It’s exhausting, but this time around I took the opportunity to completely update the battle system to make it more optimized than ever before.
+  <br>
+  <br>
+  The main changes I made was with the attack creation, selection and arrow movement systems. Pretty much all of them had the same sort of issue. Due to my inexperience when I designed the system in the first place, pretty much all of the information I needed was stored in individual variables rather than the much more efficient arrays. For example, the code that kept track of who you selected was stored in five variables (1 for each possible attack) named “selected1”, “selected2” etc. instead of  in a far more logical arrays like “select[1]”, “select[2]”. This awfully inefficient way of storing information was everywhere. To store what attack you used, who was selected, what item was selected and more.
+  <br>
+  <br>
+  The reason why this system was so bad was because in order to check for example who was selected, I had to essentially write the same code five times with the slight change in number. If I had used arrays, I would simply be able to loop through it instead and only write that code once. My programmer friends out there are cringing right now, but it gets worse. I almost always, for some bizarre reason, used global and character specific variables whenever I could. I really don’t know why I thought this was a good idea. This meant that not only did I have to write the same code five times for each variable, I <b>could not</b> reuse that code for every player because of a dumb global character specific variable like “daryl_attack”.
+  <br>
+  <br>
+  This is awful. Let’s make a hypothetical situation. Let’s say the code to check what attack you want to use is fifteen lines long. Now we must multiply that by five for each possible variable like “order1”, “order2” etc. Finally, since I used character specific and global variables, we must write that same code for each character individually, so multiply it by 6. So I end up with 450 lines of code of essentially the same thing 30 times. This applied to everything, literally everything. And if I ever wanted to make just one little change, I had to update every single line. Oh, and if there was a typo in one of them, tracking it down was extremely difficult. So many of the glitches and bugs in the game were caused by this system. The game could crash with ridiculous things like using Slash on Lockman on the fourth order! It was an awful system, but I honestly thought that how most people did it.
+  <br>
+  <br>
+  As the game got bigger and bigger, I realized I needed to update this system. If I wanted to add even one more character or attack, doing so would take an exceptional amount of time. For the record, this happened in the middle of the coronavirus quarantine, so I suddenly had a lot of time on my hand to actually get this done. So I finally bit the bullet and updated it, and boy it was not easy.
+  <br>
+  <br>
+  I had to plan every change I was going to make ahead of time since the moment I changed just one variable, everything else would collapse and I would be able to run the game again until I updated everything. So I took days of just mindlessly finding and replacing variables after variable and slowly but surely updating all of the systems, all without knowing if it would actually work. After about a week of replacing and changing everything. I finally was able to run without instantly crashing, however, once I got into the battle the errors started flying all over the place. I would say it took another few days to actually get to the point where you could actually start a battle without crashing the game.
+  <br>
+  <br>
+  This is how it was for about a month. The game would crash if I hovered over any attack, then it would crash if I selected an attack, then it would crash if I tried to select a target, and I think you get the idea. Slowly, but surely, I went through and fixed everything one by one. I worked through the errors and finally was able to complete a very simple battle. By simple I mean no skipping, using items or having any buffs. It took about another month to have the game back to where it was before, and the difference was already huge. So many scripts went from hundreds of lines to dozens. While everything worked the same functionally, everything was much more straightforward and changes could be made so much faster.
+  <br>
+  <br>
+  However, I didn’t stop. I figured I should go ahead and most other outdated systems, so I did. I updated the arrow movement to be smoother and many data grids have been optimized as well. Another month and everything had changed, a complete rework. The game is the most stable it has ever been and I am much more motivated to add new content knowing that it will only take a few extra lines of code rather than literally thousands.
+  <br>
+  <br>
+  I do want to point out that the biggest bug in the game has been fixed! This bug has been in the game ever since I added speed. I wrote a <link>devlog<link> about how annoying it was almost 2 years ago! The bug was quite simple, when you select an enemy for your attack, the future arrow marker would appear to show you where that attack would land on their timeline. However, the bug was that the future arrow marker was extremely inaccurate. It depended on your speed, but generally the discrepancy between where the attack was predicted to land and where it actually landed would range between one or two pixels to fifteen to twenty. Here is a slowed down gif of the bug in action, notice where the future arrow marker is and where the arrow actually is when the attack hits.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_bug.gif" alt="The stupid bad bug that no one likes. Booooo."  style="width:60%;  display: block;">
+  <br>
+  <br>
+  However, after years of banging my head against the wall, I have finally fixed it! The best part, it was a super simple fix. The issue was I was dedicated to getting it to work with math, usually the equation would total up to “(attackTime+speedConversion)*5” I explained this method of thinking in that devlog from two years ago. I realized one day though, I could just loop it instead of relying on math. So this is what I came up with…
+  <br>
+  <br>
+  <div class="code_text">
+  var pa = 0; //Player Arrow
+  var ea = 0; //Enemy Arrow
+  while (pa <= attack_time*4.83) //Move until it reaches the correct place in the player timeline
+  {
+  pa += (arrow_speed+player_stat_speed); //Add to player arrow
+  ea += (arrow_speed+enemy_stat_speed); //Add to enemy arrow
+  }
+  player_arrow.x += pa; //Add to player arrow x coordinate
+  enemy_arrow.x += ea;  //Add to enemy arrow x coordinate
+  </div>
+  <br>
+  <br>
+  Basically, I move both arrows together slowly different amounts based on their speed until the player arrow reaches the correct point. Since the player arrow doesn’t get affected by speed the same way the enemy arrow does, we can use it as a reliable and consistent measurement. This solved it. It’s almost perfect now and most discrepancies are by fractions of a pixel so you can barely even tell.
+  <br>
+  <br>
+  This section is getting very long so I’ll wrap it up here. There are so many more changes I could go in depth about, but then this dev-log would become a really technical boring mess. However, it deserves a large chunk of the update because this took more than 3 months to get fully implemented, but I couldn’t be happier with how it turned out. It’s still not perfect, there are still many things I wish to change, but we are in a very good place in terms of the battle system. It shouldn’t change much from now on, so I hope you’ll be able to play it in the demo release!
+  <br>
+  <br>
+  <HEADER> Battle Optimizations, Fixes and Smaller Changes
+    <br>
+    <br>
+  Wow, those were some big changes, but there are lots of smaller ones. Let’s rapid fire through them...
+  <br>
+  <br>
+  <Header> Hovering for Info
+    <br>
+    <br>
+  In the last update, the description box was added. It was used mostly for attack and item descriptions. You can hover over almost everything to get some sort of information about it in the description box. This update adds new hover information for characters and buff/debuff. It also gives you more information while hovering over the future arrow marker and order in the order pane. The more info the better!
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_hover_info.gif" alt="More info on hover"  style="width:60%;  display: block;">
+    <br>
+    <br>
+  <Header> Attack Cancelling
+    <br>
+    <br>
+  You can now cancel an attack after you selected it. Simply right click if you have selected an attack to cancel it. Before, you would have to select the enemy then clear the order pane to choose a different attack. Also, did you notice that the hitbox turns red when you have it selected?
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_attack_cancel.gif" alt="Attack Cancelling"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  <Header> Order Cancelling
+    <br>
+    <br>
+  Next up is order cancelling, this one is very useful. You can now cancel individual orders on the order pane. All you have to do is simply right click on whichever order you would like to cancel. That order will be deleted and the others orders will fill its place. So, if you have three orders and you delete the second one, order 1 will stay the same and order 3 will become order 2. It makes sense when you see it...
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_order_cancel.gif" alt="Order Cancelling"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  In reality, it’s actually clearing the entire order pane then automatically re-adding the orders one by one, excluding the one you selected. It’s pretty simple and saves you from having to clear your order pane all the time. Also, did you notice that the “Wipe” button is now “Clear”? Fun fact, it was always meant to be clear, but it was too big to fit in the box with the font I chose. Thanks to the redesign, “Clear” can get it’s chance to shine!
+  <br>
+  <br>
+  <HEADER> Other Miscellaneous Changes
+    <br>
+    <br>
+  Those are all the notable changes in the battle system, there are a few more things I do want to cover that aren’t explicitly part of the battle or overworld systems.
+  <br>
+  <br>
+  <Header> Weapon and Attack Changes
+    <br>
+    <br>
+  Thanks to the new personalities of the characters, many weapons got name changes to reflect their character more accurately. I wasn’t going to go over each change individually, but what the heck, this update is already long, what's a few more lines? Here you go…
+  <br>
+  <br>
+  <ul>
+  <li> Daryl’s Sword -> Wooden Sword </li>
+  <li> Staff of Healing -> Wooden Staff  </li>
+  <li> Rock Sword -> Leather Gloves  </li>
+  </ul>
+  <br>
+  <br>
+  There are also now character specific weapons. For example, Daryl is the only one who can use swords, while Clint and Oliver can’t. This is a good change since we can design weapons for each character specifically instead of having to account for everyone.
+  <br>
+  <br>
+  Also, some attack names have also changed, again, to reflect the new personalities of the characters. The ones that have changed are...
+  <br>
+  <br>
+  <ul>
+  <li> Living Strike -> Revenge (Clint) </li>
+  <li> Wide Slash -> Multi-Hit (Oliver) </li>
+  <li> Smash Down -> Fire Punch (Oliver) </li>
+  </ul>
+  <br>
+  <br>
+  The description of many attacks have changed too, mostly changing the description of the attack to fit the animations and addressing the characters directly such as “Oliver engulfes his fist with flame and strike at full force at the enemy” for Fire Punch.
+  <br>
+  <br>
+  We have actually added many new weapons and armors, however you’ll have to play the demo to find out what they are.
+  <br>
+  <br>
+  <Header> Reviving
+    <br>
+    <br>
+  You can now use Revives to bring back a fainted character.  Revives are a special kind of item since they cannot appear in battles, you can only use them in the overworld. Simply give them to a fainted party member to bring them back with 1 health, you will have to finish healing them on your own.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_revive.gif" alt="Reviving in Overworld"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  In the future, we plan to add revives that can heal as well. Another possibility is the addition of reviving in battles, but we will have to wait and see on that one.
+  <br>
+  <br>
+  <HEADER> General Changes
+    <br>
+    <br>
+  We have a few general updates with the game to talk about.
+  <br>
+  <br>
+  <Header> New Resolution Manager
+    <br>
+    <br>
+  Way back in <link>Update 1<link>, I set the game resolution and created a resolution manager based on the system designed by <link>PixelatedPope<link>. While that system has served me well, it did make the game have some weird graphical glitches. Since, as previously mentioned, I am a far better programmer than I was three years ago, I decided to take a crack at my own system.
+  <br>
+  <br>
+  After a bit of trial and error, I made something I am quite happy with. Visually, it works almost exactly the same as the old system, but the visual glitches are gone. It’s a very barebones system, it lacks some bells and whistles like a zoom feature, but I don’t really need those anyways so it would just needlessly complicate things. Either way, I would highly recommend playing in fullscreen so that the manager doesn’t have to do any weird calculations in the first place. Fullscreen is certainly the ideal experience.
+  <br>
+  <br>
+  <Header> General Optimizations
+    <br>
+    <br>
+  Another big goal for this update was general optimizations and updating lots of my old code. I already mentioned this a bit for the battle system, but there are some other things I’ve done. While developing the game, I need to keep in mind to not make too many unnecessary objects. While I’ve done a good job keeping optimization in mind for newer features, the older ones weren’t up to snuff. For example, the “E” icon that appears whenever you can interact with something. Before, an instance of that “E” would be created for every object that needed it. So in the main area of Arlette alone there could be a dozen of those objects loaded unnecessarily between NPCs, signs and doors. Fixing those types of situations is what the goal is with optimization. Now, the “E” object is only created when you collide with an object that needs it, meaning there is only one onscreen at a time.
+  <br>
+  <br>
+  I’ve done a similar thing with many of the data grids. I had several instances of the same grid being loaded multiple times for some reason, but those have all been fixed. I have also streamlined how I add information into the grids, which makes adding new items, attacks etc. easier.
+  <br>
+  <br>
+  <Header> New Title Screen
+    <br>
+    <br>
+  My artist friends decided that my fun collage logo had to go. It did admitally look quite bad, and you could barely even tell it said Project Phases. This new one is much simpler and more streamlined, however it does still have elements of the timeline so you could say that the old one lives on. Here is a before and after...
+  <br>
+  <br>
+  <img src="../../images/Updates/Update 9/update9_old_title.png" alt="Old Title Logo" style="width:45%; height:45%; display: inline; margin-right: 4%;">
+  <img src="../../images/Updates/Update 9/update9_new_title.png" alt="New Title Logo" style="width:45%; height:45%; display: inline;">
+  <br>
+  <br>
+  It is quite sad though, that title screen was the last surviving asset from the original <link> Project Phases Overview<link> video. The game really has changed since then hasn’t it?
+  <br>
+  <br>
+  <HEADER> Website Updates
+    <br>
+    <br>
+  Woah, website updates? Yeah, website updates! I’ve never had a dedicated section for the website but a few things have changed. First, if you look in your URL bar you will see the new domain name, soltairus.com! You may have not noticed it since soltairus.github.io still takes you here anyways. I guess it makes this website slightly more official or something.
+  <br>
+  <br>
+  Second, if you go to the <link>Project Phases<link> tab at the top of the site, you will see that much of the information there has been updated to reflect the new changes. This includes updated battle, overworld and character images and information. Go check it out!
+  <br>
+  <br>
+  Third is the website has had a few typo fixes throughout the site. The biggest one was where on many of the pages it said “Solatirus” instead of “Soltairus”. Whoops.
+  <br>
+  <br>
+  Finally, I guess it’s not really a website change, but I got a new profile picture for my social places courtesy of our fine artists friends.
+  <br>
+  <br>
+    <img src="../../images/Updates/Update 9/update9_profile.png" alt="Reviving in Overworld"  style="width:60%;  display: block;">
+  <br>
+  <br>
+  It’s a more detailed shot of Daryl, sword and all. Not bad at all.
+  <br>
+  <br>
+  <HEADER> What’s next?
+    <br>
+    <br>
+  So that’s the update! I know it’s been more than a year since the last one, but I hope the sheer amount of content here makes up for it. Next up is the coveted Update 10. The release of that update will also be the release of the Project Phases demo! You will finally be able to play it! I expect the Update 10 post to be relatively short since I don’t want to spoil to much about the demo, but we will see when we get there.
+  <br>
+  <br>
+  Let’s talk about the demo. I have started to plan out how the demo is going to play out. In my head, it should come together very well, but we will have to wait and see. Depending on the scope of it, I may not even call it a demo anymore since it may end up being more than that, but again we will have to wait and see.
+  <br>
+  <br>
+  The plan going forward is first, finish wrapping up the battle system, fix some other bugs and such and add the last few additions. Afterwards, we will give the overworld a round of polishing. It won’t be as drastic as the battle system, but I expect to redesign many of the menus and maybe a few sprites here and there. Once those two things are finished, it will be full steam ahead with adding content. Areas to explore, new enemies to fight, story, music, it’s going to be awesome. Of course we have a long way until we reach that point, but one day at a time.
+  <br>
+  <br>
+  As for when I think we will release the game, that is a big “I don’t know”. Anytime I seem to set a deadline, I almost always miss it by a few months. Phases, no matter how much I want to work on it, is a side project, normal life has to come first and it can be hard to fit it in sometimes. It’s going to be harder now since I have more people working with me now. We all have to work around our lives to fit Phases into our schedule. However, I sincerely hope it will be out by the end of next year and I don’t think that is an unrealistic estimate.
+  <br>
+  <br>
+  Either way, once I start adding more content, my social places will start getting real quiet about Phases to not spoil things. So don’t worry if you don’t see anything from me for a while, I’m simply working in secret so you can go into the game blind. I’ll try to find some things to keep my social places updated, but we will see how that goes.
+  <br>
+  <br>
+  I think that is about going to do it for this extremely long update post. If you made it this far, I can not thank you enough. This game means so much to me and knowing that there are people out there who care too makes all the work worth it. So from the bottom of my heart, thank you.
+  <br>
+  <br>
+  If you want to keep up with me the best place to do that is on <link>Twitter<link>. You can also follow me on <link>Twitch<link> for game-dev livestreams and subscribe on <link>YouTube<link> for update videos (which by the way, go check out the Update 9 video if you haven’t yet). Another place I hang out in a lot is the <link> Unique Indie RPGs Discord server <link> ran by <link>MustardPlus<link>. It’s an awesome little community filled with awesome people with awesome projects. Regardless if you are a developer or not, we would love to have you there. I’m there all the time so come say hi.
+  <br>
+  <br>
+  If you read this in one sitting, go reward yourself with a cookie or your favorite snack. I’m going to do the same, then get back to work. I’ll see you in Update 10!
+  <br>
+  <br>
+  Thanks for reading,
+  <br>
+  <br>
+  Andy
+
+
+</p>
+</div>
+
+</div>
+<footer id="main_footer">
+	<p>&copy; Soltairus Website</p>
+	<div id="main_footer_links">
+			<a target="_blank" href="https://twitter.com/soltairus">Twitter</a>
+			<a target="_blank" href="https://www.youtube.com/channel/UCDMWA2XwUlxsRsmgY9oa7dg">Youtube</a>
+			<a target="_blank" href="https://www.twitch.tv/soltairus">Twitch</a>
+	</div>
+</footer>
+
+</body>
+</html>
